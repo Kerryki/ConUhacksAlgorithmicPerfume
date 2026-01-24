@@ -8,3 +8,7 @@ all of them represent the number of votes except:
 ex: lemon=3.2 and its in top notes, sum all notes in the topmiddle and base to get total then get the percentage of how much lemon is represented in the data, repeat of all notes. 
 
 
+3. combine day and night and also separate from the seasons column
+
+4. convert boy and girls to a scale
+
