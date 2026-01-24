@@ -1,0 +1,10 @@
+for every column, the votes sum to anumber, we need them all to sum to 100$ f
+
+
+all of them represent the number of votes except: 
+1- main accords represents precentage of each accord, we want it to represent the precentage of all accords
+
+2- Top  Middle and Base notes : represent each note as a percentage of the sum of all notes available 
+ex: lemon=3.2 and its in top notes, sum all notes in the topmiddle and base to get total then get the percentage of how much lemon is represented in the data, repeat of all notes. 
+
+
