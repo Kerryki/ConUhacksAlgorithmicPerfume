@@ -36,8 +36,8 @@ export default function LongevityProjectionPage() {
     console.log('Full Payload:', payload);
     console.log('================================');
     
-    // Navigate to gender expression page
-    router.push('/create/gender-expression');
+    // Navigate to age page (step 4)
+    router.push('/create/age');
     
     // TODO: Send to actual backend
     // try {
@@ -57,6 +57,12 @@ export default function LongevityProjectionPage() {
     <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-between px-6 py-12 relative overflow-hidden">
       {/* Header Section */}
       <div className="text-center space-y-3 pt-8">
+        {/* Step indicator */}
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
+          <span className="text-xs font-light tracking-widest uppercase text-amber-400">
+            Step 3 of 7
+          </span>
+        </div>
         <h1 className="text-4xl md:text-5xl font-light text-white">
           Define Your <span className="text-amber-400 italic font-serif">Aura</span>
         </h1>

@@ -107,6 +107,12 @@ export default function ColorPickerPage() {
 
       {/* Header Section */}
       <div className="text-center space-y-3 pt-8 relative z-10">
+        {/* Step indicator */}
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
+          <span className="text-xs font-light tracking-widest uppercase text-amber-400">
+            Step 2 of 7
+          </span>
+        </div>
         <h1 className="text-4xl md:text-5xl font-light text-white">
           Choose Your <span className="text-amber-400 italic font-serif">Essence</span>
         </h1>

@@ -7,8 +7,8 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the color-picker page
-    router.push('/create/color-picker');
+    // Redirect to the personality page (first step)
+    router.push('/create/personality');
   }, [router]);
 
   return (

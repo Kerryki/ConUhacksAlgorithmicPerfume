@@ -195,6 +195,12 @@ export default function AccordSelectionPage() {
         <div 
           className={`text-center space-y-4 mb-6 md:mb-10 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
         >
+          {/* Step indicator */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
+            <span className="text-xs font-light tracking-widest uppercase text-amber-400">
+              Step 7 of 7
+            </span>
+          </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-white tracking-wide">
             Blend Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-pink-400 to-cyan-400 italic font-serif">Essence</span>
           </h1>

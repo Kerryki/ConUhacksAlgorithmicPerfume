@@ -8,6 +8,7 @@ import {
   type Personality,
 } from "./components/personality-hex-grid"
 import { ArrowRight } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 // Floating particle component
 function FloatingParticles({ color, count = 20 }: { color: string; count?: number }) {
@@ -41,6 +42,7 @@ function FloatingParticles({ color, count = 20 }: { color: string; count?: numbe
 }
 
 export default function PersonalityPage() {
+  const router = useRouter()
   const [selectedPersonality, setSelectedPersonality] =
     useState<Personality | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -71,11 +73,15 @@ export default function PersonalityPage() {
     }
 
     console.log("Personality payload:", JSON.stringify(payload, null, 2))
+    
+    // Store to localStorage
+    localStorage.setItem('perfume_personality_data', JSON.stringify(payload))
+    
     await new Promise((resolve) => setTimeout(resolve, 800))
     setIsSubmitting(false)
-    alert(
-      `Selected: ${selectedPersonality.title}\n\nPayload ready for backend:\n${JSON.stringify(payload, null, 2)}`
-    )
+    
+    // Navigate to color picker (step 2)
+    router.push('/create/color-picker')
   }
 
   return (
@@ -162,7 +168,7 @@ export default function PersonalityPage() {
                 className="text-xs font-light tracking-widest uppercase"
                 style={{ color: selectedPersonality?.accentColor || '#fbbf24' }}
               >
-                Step 1 of 9
+                Step 1 of 7
               </span>
             </motion.div>
 

@@ -6,10 +6,12 @@ import { ArrowRight, ChevronLeft } from "lucide-react"
 import { HexagonBackground } from "./components/hexagon-background"
 import { AgeSelectionGrid, ageRanges } from "./components/age-selection-grid"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 type AgeRange = typeof ageRanges[number]
 
 export default function AgePage() {
+  const router = useRouter()
   const [selectedAge, setSelectedAge] = useState<AgeRange | null>(null)
   const [showConfirmation, setShowConfirmation] = useState(false)
 
@@ -32,9 +34,15 @@ export default function AgePage() {
           intensity: selectedAge.intensity,
           intensityLevel: selectedAge.intensityLevel,
         },
+        timestamp: new Date().toISOString()
       }
       console.log("Age selection payload:", JSON.stringify(payload, null, 2))
-      // Navigate to next step or pass to parent
+      
+      // Store to localStorage
+      localStorage.setItem('perfume_age_data', JSON.stringify(payload))
+      
+      // Navigate to gender expression (step 5)
+      router.push('/create/gender-expression')
     }
   }
 
@@ -134,7 +142,7 @@ export default function AgePage() {
           transition={{ duration: 0.6 }}
         >
           <Link
-            href="/create/personality"
+            href="/create/longevity-projection"
             className="flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -162,7 +170,7 @@ export default function AgePage() {
               className="text-sm font-light"
               style={{ color: selectedAge ? selectedAge.color : "#fbbf24" }}
             >
-              2 / 9
+              4 / 7
             </span>
           </motion.div>
         </motion.header>
@@ -306,15 +314,7 @@ export default function AgePage() {
                   </span>
                 </motion.button>
 
-                {/* Skip option */}
-                <motion.button
-                  className="text-xs tracking-wider text-white/40 hover:text-white/70 transition-colors underline underline-offset-4 font-light"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  Skip this step
-                </motion.button>
+
               </motion.div>
             )}
           </AnimatePresence>
