@@ -7,8 +7,8 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the longevity-projection page
-    router.push('/create/longevity-projection');
+    // Redirect to the color-picker page
+    router.push('/create/color-picker');
   }, [router]);
 
   return (
