@@ -9,7 +9,6 @@ import HueSlider from './components/HueSlider';
 
 export default function ColorPickerPage() {
   const router = useRouter();
-  const [hasStarted, setHasStarted] = useState(false);
   const [hue, setHue] = useState(180); // Start with cyan
   const [saturation, setSaturation] = useState(50);
   const [brightness, setBrightness] = useState(80);
@@ -68,28 +67,6 @@ export default function ColorPickerPage() {
     // Navigate to next page
     router.push('/create/longevity-projection');
   };
-
-  // Show start screen if flow hasn't started
-  if (!hasStarted) {
-    return (
-      <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center px-6">
-        <div className="text-center space-y-8 max-w-md">
-          <h1 className="text-3xl md:text-4xl font-light text-white tracking-wide">
-            Choose Your <span className="text-amber-400 italic font-serif">Essence</span>
-          </h1>
-          <p className="text-white/60 text-sm font-light leading-relaxed">
-            Select a color that resonates with your emotional tone and aesthetic taste
-          </p>
-          <button
-            onClick={() => setHasStarted(true)}
-            className="w-full py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-medium hover:bg-white/20 transition-all duration-300 hover:border-white/30 hover:scale-105 active:scale-95"
-          >
-            Start
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div 

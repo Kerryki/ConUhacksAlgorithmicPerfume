@@ -224,7 +224,7 @@ export default function PersonalNamePage() {
           transition={{ duration: 0.6 }}
         >
           <Link
-            href="/create/accord-selection"
+            href="/create/weather"
             className="flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />

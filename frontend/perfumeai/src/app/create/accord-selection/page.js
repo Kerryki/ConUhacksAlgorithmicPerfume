@@ -329,8 +329,8 @@ export default function AccordSelectionPage() {
     console.log('Normalized Accords:', accordData);
     console.log('================================');
 
-    // Navigate to personal name page
-    router.push('/create/personal-name');
+    // Navigate to weather page (before personal name)
+    router.push('/create/weather');
   };
 
   const particleColors = [

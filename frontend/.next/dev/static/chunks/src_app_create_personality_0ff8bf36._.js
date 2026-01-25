@@ -1149,7 +1149,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$create$2f$personality$2f$components$2f$hexagon$2d$background$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/create/personality/components/hexagon-background.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$create$2f$personality$2f$components$2f$personality$2d$hex$2d$grid$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/create/personality/components/personality-hex-grid.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-left.js [app-client] (ecmascript) <export default as ChevronLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -1160,14 +1162,15 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 // Floating particle component
 function FloatingParticles(t0) {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(6);
-    if ($[0] !== "f5a083fdb83664edbd1cffad120cacdba9012a4c8c012577e6c4346b08bf6c71") {
+    if ($[0] !== "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5") {
         for(let $i = 0; $i < 6; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "f5a083fdb83664edbd1cffad120cacdba9012a4c8c012577e6c4346b08bf6c71";
+        $[0] = "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5";
     }
     const { color, count: t1 } = t0;
     const count = t1 === undefined ? 20 : t1;
@@ -1223,13 +1226,13 @@ function FloatingParticles(t0) {
                         }
                     }, i, false, {
                         fileName: "[project]/src/app/create/personality/page.tsx",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 55
                     }, this)
             }["FloatingParticles[(anonymous)()]"])
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 35,
+            lineNumber: 36,
             columnNumber: 10
         }, this);
         $[3] = color;
@@ -1243,12 +1246,12 @@ function FloatingParticles(t0) {
 _c = FloatingParticles;
 function PersonalityPage() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(58);
-    if ($[0] !== "f5a083fdb83664edbd1cffad120cacdba9012a4c8c012577e6c4346b08bf6c71") {
-        for(let $i = 0; $i < 58; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(61);
+    if ($[0] !== "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5") {
+        for(let $i = 0; $i < 61; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "f5a083fdb83664edbd1cffad120cacdba9012a4c8c012577e6c4346b08bf6c71";
+        $[0] = "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5";
     }
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [selectedPersonality, setSelectedPersonality] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -1321,7 +1324,7 @@ function PersonalityPage() {
     if ($[8] === Symbol.for("react.memo_cache_sentinel")) {
         t4 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$create$2f$personality$2f$components$2f$hexagon$2d$background$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HexagonBackground"], {}, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 135,
+            lineNumber: 136,
             columnNumber: 10
         }, this);
         $[8] = t4;
@@ -1352,7 +1355,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 150,
+                    lineNumber: 151,
                     columnNumber: 8
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1383,7 +1386,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 152,
+                    lineNumber: 153,
                     columnNumber: 12
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1402,7 +1405,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 164,
+                    lineNumber: 165,
                     columnNumber: 12
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1421,7 +1424,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 172,
+                    lineNumber: 173,
                     columnNumber: 12
                 }, this),
                 showParticles && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FloatingParticles, {
@@ -1429,13 +1432,13 @@ function PersonalityPage() {
                     count: 25
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 180,
+                    lineNumber: 181,
                     columnNumber: 30
                 }, this)
             ]
         }, selectedPersonality.id, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 142,
+            lineNumber: 143,
             columnNumber: 33
         }, this);
         $[9] = selectedPersonality;
@@ -1451,7 +1454,7 @@ function PersonalityPage() {
             children: t5
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 189,
+            lineNumber: 190,
             columnNumber: 10
         }, this);
         $[12] = t5;
@@ -1465,7 +1468,7 @@ function PersonalityPage() {
             className: "absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]"
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 197,
+            lineNumber: 198,
             columnNumber: 10
         }, this);
         $[14] = t7;
@@ -1495,250 +1498,308 @@ function PersonalityPage() {
         t8 = $[16];
         t9 = $[17];
     }
-    const t11 = selectedPersonality ? `linear-gradient(135deg, ${selectedPersonality.accentColor}15, transparent)` : "rgba(251, 191, 36, 0.1)";
-    const t12 = `1px solid ${selectedPersonality?.accentColor || "rgba(251, 191, 36, 0.3)"}`;
-    let t13;
-    if ($[18] !== t11 || $[19] !== t12) {
-        t13 = {
-            background: t11,
-            border: t12
-        };
+    let t11;
+    if ($[18] === Symbol.for("react.memo_cache_sentinel")) {
+        t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+            href: "/",
+            className: "flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
+                    className: "w-5 h-5"
+                }, void 0, false, {
+                    fileName: "[project]/src/app/create/personality/page.tsx",
+                    lineNumber: 228,
+                    columnNumber: 114
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-sm font-light tracking-wide",
+                    children: "Back"
+                }, void 0, false, {
+                    fileName: "[project]/src/app/create/personality/page.tsx",
+                    lineNumber: 228,
+                    columnNumber: 149
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/app/create/personality/page.tsx",
+            lineNumber: 228,
+            columnNumber: 11
+        }, this);
         $[18] = t11;
+    } else {
+        t11 = $[18];
+    }
+    const t12 = selectedPersonality ? `linear-gradient(135deg, ${selectedPersonality.accentColor}15, transparent)` : "rgba(251, 191, 36, 0.1)";
+    const t13 = `1px solid ${selectedPersonality?.accentColor || "rgba(251, 191, 36, 0.3)"}`;
+    let t14;
+    if ($[19] !== t12 || $[20] !== t13) {
+        t14 = {
+            background: t12,
+            border: t13
+        };
         $[19] = t12;
         $[20] = t13;
+        $[21] = t14;
     } else {
-        t13 = $[20];
+        t14 = $[21];
     }
-    const t14 = selectedPersonality?.accentColor || "#fbbf24";
-    let t15;
-    if ($[21] !== t14) {
-        t15 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+    const t15 = selectedPersonality?.accentColor || "#fbbf24";
+    let t16;
+    if ($[22] !== t15) {
+        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
             className: "text-xs font-light tracking-widest uppercase",
             style: {
-                color: t14
+                color: t15
             },
             children: "Step 1 of 8"
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 242,
+            lineNumber: 250,
             columnNumber: 11
         }, this);
-        $[21] = t14;
         $[22] = t15;
+        $[23] = t16;
     } else {
-        t15 = $[22];
+        t16 = $[23];
     }
-    let t16;
-    if ($[23] !== t13 || $[24] !== t15) {
-        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-            className: "mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm",
-            style: t13,
-            children: t15
-        }, void 0, false, {
+    let t17;
+    if ($[24] !== t14 || $[25] !== t16) {
+        t17 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex items-center justify-between mb-5",
+            children: [
+                t11,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    className: "inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm",
+                    style: t14,
+                    children: t16
+                }, void 0, false, {
+                    fileName: "[project]/src/app/create/personality/page.tsx",
+                    lineNumber: 260,
+                    columnNumber: 72
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 252,
+            lineNumber: 260,
             columnNumber: 11
         }, this);
-        $[23] = t13;
-        $[24] = t15;
+        $[24] = t14;
         $[25] = t16;
-    } else {
-        t16 = $[25];
-    }
-    const t17 = selectedPersonality?.accentColor || "#fbbf24";
-    const t18 = selectedPersonality ? `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50` : "0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3)";
-    let t19;
-    if ($[26] !== t17 || $[27] !== t18) {
-        t19 = {
-            color: t17,
-            textShadow: t18
-        };
         $[26] = t17;
+    } else {
+        t17 = $[26];
+    }
+    const t18 = selectedPersonality?.accentColor || "#fbbf24";
+    const t19 = selectedPersonality ? `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50` : "0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3)";
+    let t20;
+    if ($[27] !== t18 || $[28] !== t19) {
+        t20 = {
+            color: t18,
+            textShadow: t19
+        };
         $[27] = t18;
         $[28] = t19;
+        $[29] = t20;
     } else {
-        t19 = $[28];
+        t20 = $[29];
     }
-    let t20;
-    if ($[29] !== selectedPersonality) {
-        t20 = selectedPersonality ? {
+    let t21;
+    if ($[30] !== selectedPersonality) {
+        t21 = selectedPersonality ? {
             textShadow: [
                 `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`,
                 `0 0 50px ${selectedPersonality.accentColor}, 0 0 80px ${selectedPersonality.accentColor}60`,
                 `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`
             ]
         } : {};
-        $[29] = selectedPersonality;
-        $[30] = t20;
-    } else {
-        t20 = $[30];
-    }
-    let t21;
-    if ($[31] === Symbol.for("react.memo_cache_sentinel")) {
-        t21 = {
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-        };
+        $[30] = selectedPersonality;
         $[31] = t21;
     } else {
         t21 = $[31];
     }
     let t22;
-    if ($[32] !== t19 || $[33] !== t20) {
-        t22 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+    if ($[32] === Symbol.for("react.memo_cache_sentinel")) {
+        t22 = {
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+        };
+        $[32] = t22;
+    } else {
+        t22 = $[32];
+    }
+    let t23;
+    if ($[33] !== t20 || $[34] !== t21) {
+        t23 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
             className: "mb-3 text-4xl md:text-5xl font-light text-white tracking-wide",
             children: [
                 "Choose Your",
                 " ",
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
                     className: "italic font-serif",
-                    style: t19,
-                    animate: t20,
-                    transition: t21,
+                    style: t20,
+                    animate: t21,
+                    transition: t22,
                     children: "Essence"
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 296,
+                    lineNumber: 304,
                     columnNumber: 105
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 296,
+            lineNumber: 304,
             columnNumber: 11
         }, this);
-        $[32] = t19;
         $[33] = t20;
-        $[34] = t22;
-    } else {
-        t22 = $[34];
-    }
-    let t23;
-    if ($[35] === Symbol.for("react.memo_cache_sentinel")) {
-        t23 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "mx-auto max-w-md text-sm text-white/60 font-light tracking-wide",
-            children: "Select the archetype that resonates with your inner self"
-        }, void 0, false, {
-            fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 305,
-            columnNumber: 11
-        }, this);
+        $[34] = t21;
         $[35] = t23;
     } else {
         t23 = $[35];
     }
     let t24;
-    if ($[36] !== t16 || $[37] !== t22) {
-        t24 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-            className: "px-6 pb-4 pt-8 md:pt-12 text-center",
+    if ($[36] === Symbol.for("react.memo_cache_sentinel")) {
+        t24 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "mx-auto max-w-md text-sm text-white/60 font-light tracking-wide",
+            children: "Select the archetype that resonates with your inner self"
+        }, void 0, false, {
+            fileName: "[project]/src/app/create/personality/page.tsx",
+            lineNumber: 313,
+            columnNumber: 11
+        }, this);
+        $[36] = t24;
+    } else {
+        t24 = $[36];
+    }
+    let t25;
+    if ($[37] !== t23) {
+        t25 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "text-center",
+            children: [
+                t23,
+                t24
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/app/create/personality/page.tsx",
+            lineNumber: 320,
+            columnNumber: 11
+        }, this);
+        $[37] = t23;
+        $[38] = t25;
+    } else {
+        t25 = $[38];
+    }
+    let t26;
+    if ($[39] !== t17 || $[40] !== t25) {
+        t26 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+            className: "px-6 pb-4 pt-8 md:pt-12",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                 initial: t8,
                 animate: t9,
                 transition: t10,
                 children: [
-                    t16,
-                    t22,
-                    t23
+                    t17,
+                    t25
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/create/personality/page.tsx",
-                lineNumber: 312,
-                columnNumber: 67
+                lineNumber: 328,
+                columnNumber: 55
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 312,
+            lineNumber: 328,
             columnNumber: 11
         }, this);
-        $[36] = t16;
-        $[37] = t22;
-        $[38] = t24;
+        $[39] = t17;
+        $[40] = t25;
+        $[41] = t26;
     } else {
-        t24 = $[38];
+        t26 = $[41];
     }
-    let t25;
-    let t26;
     let t27;
-    if ($[39] === Symbol.for("react.memo_cache_sentinel")) {
-        t25 = {
+    let t28;
+    let t29;
+    if ($[42] === Symbol.for("react.memo_cache_sentinel")) {
+        t27 = {
             opacity: 0,
             scale: 0.9
         };
-        t26 = {
+        t28 = {
             opacity: 1,
             scale: 1
         };
-        t27 = {
+        t29 = {
             duration: 0.6,
             delay: 0.2
         };
-        $[39] = t25;
-        $[40] = t26;
-        $[41] = t27;
+        $[42] = t27;
+        $[43] = t28;
+        $[44] = t29;
     } else {
-        t25 = $[39];
-        t26 = $[40];
-        t27 = $[41];
+        t27 = $[42];
+        t28 = $[43];
+        t29 = $[44];
     }
-    let t28;
-    if ($[42] !== selectedPersonality) {
-        t28 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+    let t30;
+    if ($[45] !== selectedPersonality) {
+        t30 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
             className: "flex flex-1 items-center justify-center px-4 py-6",
-            initial: t25,
-            animate: t26,
-            transition: t27,
+            initial: t27,
+            animate: t28,
+            transition: t29,
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$create$2f$personality$2f$components$2f$personality$2d$hex$2d$grid$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PersonalityHexGrid"], {
                 selected: selectedPersonality,
                 onSelect: handleSelect
             }, void 0, false, {
                 fileName: "[project]/src/app/create/personality/page.tsx",
-                lineNumber: 345,
+                lineNumber: 361,
                 columnNumber: 130
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 345,
+            lineNumber: 361,
             columnNumber: 11
         }, this);
-        $[42] = selectedPersonality;
-        $[43] = t28;
+        $[45] = selectedPersonality;
+        $[46] = t30;
     } else {
-        t28 = $[43];
+        t30 = $[46];
     }
-    let t29;
-    let t30;
     let t31;
-    if ($[44] === Symbol.for("react.memo_cache_sentinel")) {
-        t29 = {
+    let t32;
+    let t33;
+    if ($[47] === Symbol.for("react.memo_cache_sentinel")) {
+        t31 = {
             opacity: 0,
             y: 20
         };
-        t30 = {
+        t32 = {
             opacity: 1,
             y: 0
         };
-        t31 = {
+        t33 = {
             duration: 0.6,
             delay: 0.4
         };
-        $[44] = t29;
-        $[45] = t30;
-        $[46] = t31;
+        $[47] = t31;
+        $[48] = t32;
+        $[49] = t33;
     } else {
-        t29 = $[44];
-        t30 = $[45];
-        t31 = $[46];
+        t31 = $[47];
+        t32 = $[48];
+        t33 = $[49];
     }
-    let t32;
-    if ($[47] !== handleContinue || $[48] !== isSubmitting || $[49] !== selectedPersonality) {
-        t32 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+    let t34;
+    if ($[50] !== handleContinue || $[51] !== isSubmitting || $[52] !== selectedPersonality) {
+        t34 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
             className: "px-6 pb-8 pt-4",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                 className: "mx-auto max-w-md",
-                initial: t29,
-                animate: t30,
-                transition: t31,
+                initial: t31,
+                animate: t32,
+                transition: t33,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                     mode: "wait",
                     children: selectedPersonality ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1771,7 +1832,7 @@ function PersonalityPage() {
                                         children: "Selected Essence"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 392,
+                                        lineNumber: 408,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1783,7 +1844,7 @@ function PersonalityPage() {
                                         children: selectedPersonality.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 392,
+                                        lineNumber: 408,
                                         columnNumber: 115
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1791,13 +1852,13 @@ function PersonalityPage() {
                                         children: selectedPersonality.description
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 395,
+                                        lineNumber: 411,
                                         columnNumber: 49
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/create/personality/page.tsx",
-                                lineNumber: 389,
+                                lineNumber: 405,
                                 columnNumber: 59
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -1832,7 +1893,7 @@ function PersonalityPage() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 404,
+                                        lineNumber: 420,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1849,7 +1910,7 @@ function PersonalityPage() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create/personality/page.tsx",
-                                            lineNumber: 410,
+                                            lineNumber: 426,
                                             columnNumber: 107
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                             children: [
@@ -1872,25 +1933,25 @@ function PersonalityPage() {
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                                        lineNumber: 422,
+                                                        lineNumber: 438,
                                                         columnNumber: 46
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/create/personality/page.tsx",
-                                                    lineNumber: 416,
+                                                    lineNumber: 432,
                                                     columnNumber: 35
                                                 }, this)
                                             ]
                                         }, void 0, true)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 410,
+                                        lineNumber: 426,
                                         columnNumber: 20
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/create/personality/page.tsx",
-                                lineNumber: 395,
+                                lineNumber: 411,
                                 columnNumber: 154
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1905,13 +1966,13 @@ function PersonalityPage() {
                                 children: "Reset Selection"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/create/personality/page.tsx",
-                                lineNumber: 422,
+                                lineNumber: 438,
                                 columnNumber: 110
                             }, this)
                         ]
                     }, "selected", true, {
                         fileName: "[project]/src/app/create/personality/page.tsx",
-                        lineNumber: 377,
+                        lineNumber: 393,
                         columnNumber: 184
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
@@ -1944,79 +2005,79 @@ function PersonalityPage() {
                             children: "Select a hexagon to reveal your essence"
                         }, void 0, false, {
                             fileName: "[project]/src/app/create/personality/page.tsx",
-                            lineNumber: 436,
+                            lineNumber: 452,
                             columnNumber: 38
                         }, this)
                     }, "instruction", false, {
                         fileName: "[project]/src/app/create/personality/page.tsx",
-                        lineNumber: 427,
+                        lineNumber: 443,
                         columnNumber: 226
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 377,
+                    lineNumber: 393,
                     columnNumber: 132
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/create/personality/page.tsx",
-                lineNumber: 377,
+                lineNumber: 393,
                 columnNumber: 46
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 377,
+            lineNumber: 393,
             columnNumber: 11
         }, this);
-        $[47] = handleContinue;
-        $[48] = isSubmitting;
-        $[49] = selectedPersonality;
-        $[50] = t32;
+        $[50] = handleContinue;
+        $[51] = isSubmitting;
+        $[52] = selectedPersonality;
+        $[53] = t34;
     } else {
-        t32 = $[50];
+        t34 = $[53];
     }
-    let t33;
-    if ($[51] !== t24 || $[52] !== t28 || $[53] !== t32) {
-        t33 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    let t35;
+    if ($[54] !== t26 || $[55] !== t30 || $[56] !== t34) {
+        t35 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative z-10 flex min-h-screen flex-col",
             children: [
-                t24,
-                t28,
-                t32
+                t26,
+                t30,
+                t34
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 452,
+            lineNumber: 468,
             columnNumber: 11
         }, this);
-        $[51] = t24;
-        $[52] = t28;
-        $[53] = t32;
-        $[54] = t33;
+        $[54] = t26;
+        $[55] = t30;
+        $[56] = t34;
+        $[57] = t35;
     } else {
-        t33 = $[54];
+        t35 = $[57];
     }
-    let t34;
-    if ($[55] !== t33 || $[56] !== t6) {
-        t34 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+    let t36;
+    if ($[58] !== t35 || $[59] !== t6) {
+        t36 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
             className: "relative min-h-screen overflow-hidden bg-[#050505]",
             children: [
                 t4,
                 t6,
                 t7,
-                t33
+                t35
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 462,
+            lineNumber: 478,
             columnNumber: 11
         }, this);
-        $[55] = t33;
-        $[56] = t6;
-        $[57] = t34;
+        $[58] = t35;
+        $[59] = t6;
+        $[60] = t36;
     } else {
-        t34 = $[57];
+        t36 = $[60];
     }
-    return t34;
+    return t36;
 }
 _s(PersonalityPage, "2xZfDBVTLGXHeRU1JF+kxLT9mzM=", false, function() {
     return [

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, ChevronLeft } from "lucide-react"
 import { HexagonBackground } from "@/components/hexagon-background"
@@ -9,7 +10,9 @@ import { WeatherEffects } from "@/components/weather-effects"
 import Link from "next/link"
 
 export default function SeasonPage() {
+  const router = useRouter()
   const [selectedSeason, setSelectedSeason] = useState<Season | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Handle season selection
   const handleSelect = (season: Season | null) => {
@@ -17,19 +20,31 @@ export default function SeasonPage() {
   }
 
   // Handle continue
-  const handleContinue = () => {
-    if (selectedSeason) {
-      const payload = {
-        season: {
-          id: selectedSeason.id,
-          name: selectedSeason.name,
-          value: selectedSeason.value, // 1=summer, 2=fall, 3=winter, 4=spring
-          scentProfile: selectedSeason.scentProfile,
-        },
-      }
-      console.log("Season selection payload:", JSON.stringify(payload, null, 2))
-      // Navigate to next step or pass to parent
+  const handleContinue = async () => {
+    if (!selectedSeason) return
+
+    setIsSubmitting(true)
+
+    const payload = {
+      season: {
+        id: selectedSeason.id,
+        name: selectedSeason.name,
+        value: selectedSeason.value, // 1=summer, 2=fall, 3=winter, 4=spring
+        scentProfile: selectedSeason.scentProfile,
+      },
+      timestamp: new Date().toISOString(),
     }
+
+    console.log("Season selection payload:", JSON.stringify(payload, null, 2))
+    
+    // Store to localStorage
+    localStorage.setItem('perfume_weather_data', JSON.stringify(payload))
+    
+    await new Promise((resolve) => setTimeout(resolve, 800))
+    setIsSubmitting(false)
+    
+    // Navigate to personal name page (final step before results)
+    router.push('/create/personal-name')
   }
 
   return (
@@ -110,7 +125,7 @@ export default function SeasonPage() {
           transition={{ duration: 0.6 }}
         >
           <Link
-            href="/create/age"
+            href="/create/accord-selection"
             className="flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -138,7 +153,7 @@ export default function SeasonPage() {
               className="text-sm font-light"
               style={{ color: selectedSeason ? selectedSeason.color : "#fbbf24" }}
             >
-              3 / 9
+              8 / 9
             </span>
           </motion.div>
         </motion.header>
@@ -280,14 +295,15 @@ export default function SeasonPage() {
               >
                 <motion.button
                   onClick={handleContinue}
-                  className="relative group px-10 py-4 rounded-full font-light tracking-widest text-sm uppercase overflow-hidden"
+                  disabled={isSubmitting}
+                  className="relative group px-10 py-4 rounded-full font-light tracking-widest text-sm uppercase overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     background: `linear-gradient(135deg, ${selectedSeason.gradientFrom}, ${selectedSeason.gradientTo})`,
                     color: selectedSeason.id === "winter" ? "#1e3a5f" : "#050505",
                     boxShadow: `0 0 30px ${selectedSeason.color}50, 0 0 60px ${selectedSeason.color}30`,
                   }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >
                   {/* Shine effect */}
                   <motion.div
@@ -314,13 +330,26 @@ export default function SeasonPage() {
                   />
 
                   <span className="relative z-10 flex items-center gap-3">
-                    Confirm Season
-                    <motion.span
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.span>
+                    {isSubmitting ? (
+                      <>
+                        <motion.div
+                          className="w-4 h-4 border-2 border-current/30 border-t-current rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+                        />
+                        Continuing...
+                      </>
+                    ) : (
+                      <>
+                        Confirm Season
+                        <motion.span
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          <ArrowRight className="w-4 h-4" />
+                        </motion.span>
+                      </>
+                    )}
                   </span>
                 </motion.button>
               </motion.div>
