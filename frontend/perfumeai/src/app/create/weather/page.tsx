@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, ChevronLeft } from "lucide-react"
 import { HexagonBackground } from "@/components/hexagon-background"
-import { SeasonArcSelector, seasons, type Season } from "@/components/season-arc-selector"
+import { SeasonArcSelector, type Season } from "@/components/season-arc-selector"
 import { WeatherEffects } from "@/components/weather-effects"
 import Link from "next/link"
 
