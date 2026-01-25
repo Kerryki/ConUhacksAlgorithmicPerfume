@@ -7,8 +7,9 @@ import {
   PersonalityHexGrid,
   type Personality,
 } from "./components/personality-hex-grid"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronLeft } from "lucide-react"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 // Floating particle component
 function FloatingParticles({ color, count = 20 }: { color: string; count?: number }) {
@@ -148,57 +149,72 @@ export default function PersonalityPage() {
       {/* Content */}
       <div className="relative z-10 flex min-h-screen flex-col">
         {/* Header */}
-        <header className="px-6 pb-4 pt-8 md:pt-12 text-center">
+        <header className="px-6 pb-4 pt-8 md:pt-12">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Step indicator - following theme pattern */}
-            <motion.div 
-              className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm"
-              style={{
-                background: selectedPersonality 
-                  ? `linear-gradient(135deg, ${selectedPersonality.accentColor}15, transparent)`
-                  : 'rgba(251, 191, 36, 0.1)',
-                border: `1px solid ${selectedPersonality?.accentColor || 'rgba(251, 191, 36, 0.3)'}`,
-              }}
-            >
-              <span 
-                className="text-xs font-light tracking-widest uppercase"
-                style={{ color: selectedPersonality?.accentColor || '#fbbf24' }}
+            {/* Back button and step indicator */}
+            <div className="flex items-center justify-between mb-5">
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors"
               >
-                Step 1 of 8
-              </span>
-            </motion.div>
+                <ChevronLeft className="w-5 h-5" />
+                <span className="text-sm font-light tracking-wide">Back</span>
+              </Link>
 
-            {/* Main title - following theme typography */}
-            <h1 className="mb-3 text-4xl md:text-5xl font-light text-white tracking-wide">
-              Choose Your{" "}
-              <motion.span
-                className="italic font-serif"
+              {/* Step indicator - following theme pattern */}
+              <motion.div 
+                className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm"
                 style={{
-                  color: selectedPersonality?.accentColor || '#fbbf24',
-                  textShadow: selectedPersonality 
-                    ? `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`
-                    : '0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3)'
+                  background: selectedPersonality 
+                    ? `linear-gradient(135deg, ${selectedPersonality.accentColor}15, transparent)`
+                    : 'rgba(251, 191, 36, 0.1)',
+                  border: `1px solid ${selectedPersonality?.accentColor || 'rgba(251, 191, 36, 0.3)'}`,
                 }}
-                animate={selectedPersonality ? {
-                  textShadow: [
-                    `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`,
-                    `0 0 50px ${selectedPersonality.accentColor}, 0 0 80px ${selectedPersonality.accentColor}60`,
-                    `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`,
-                  ]
-                } : {}}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                Essence
-              </motion.span>
-            </h1>
+                <span 
+                  className="text-xs font-light tracking-widest uppercase"
+                  style={{ color: selectedPersonality?.accentColor || '#fbbf24' }}
+                >
+                  Step 1 of 8
+                </span>
+              </motion.div>
+            </div>
 
-            <p className="mx-auto max-w-md text-sm text-white/60 font-light tracking-wide">
-              Select the archetype that resonates with your inner self
-            </p>
+            {/* Title section */}
+            <div className="text-center">
+
+              {/* Main title - following theme typography */}
+              <h1 className="mb-3 text-4xl md:text-5xl font-light text-white tracking-wide">
+                Choose Your{" "}
+                <motion.span
+                  className="italic font-serif"
+                  style={{
+                    color: selectedPersonality?.accentColor || '#fbbf24',
+                    textShadow: selectedPersonality 
+                      ? `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`
+                      : '0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3)'
+                  }}
+                  animate={selectedPersonality ? {
+                    textShadow: [
+                      `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`,
+                      `0 0 50px ${selectedPersonality.accentColor}, 0 0 80px ${selectedPersonality.accentColor}60`,
+                      `0 0 30px ${selectedPersonality.accentColor}, 0 0 60px ${selectedPersonality.accentColor}50`,
+                    ]
+                  } : {}}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  Essence
+                </motion.span>
+              </h1>
+
+              <p className="mx-auto max-w-md text-sm text-white/60 font-light tracking-wide">
+                Select the archetype that resonates with your inner self
+              </p>
+            </div>
           </motion.div>
         </header>
 

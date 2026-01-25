@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { ChevronLeft } from 'lucide-react';
 import LongevityClock from './components/LongevityClock';
 import ProjectionAura from './components/ProjectionAura';
 
@@ -56,19 +58,34 @@ export default function LongevityProjectionPage() {
   return (
     <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-between px-6 py-12 relative overflow-hidden">
       {/* Header Section */}
-      <div className="text-center space-y-3 pt-8">
-        {/* Step indicator */}
-        <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
-          <span className="text-xs font-light tracking-widest uppercase text-amber-400">
-            Step 3 of 8
-          </span>
+      <div className="w-full relative z-10 pt-8">
+        {/* Back button and step indicator */}
+        <div className="flex items-center justify-between mb-6 px-4">
+          <Link
+            href="/create/color-picker"
+            className="flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            <span className="text-sm font-light tracking-wide">Back</span>
+          </Link>
+
+          {/* Step indicator */}
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
+            <span className="text-xs font-light tracking-widest uppercase text-amber-400">
+              Step 3 of 8
+            </span>
+          </div>
         </div>
-        <h1 className="text-4xl md:text-5xl font-light text-white">
-          Define Your <span className="text-amber-400 italic font-serif">Aura</span>
-        </h1>
-        <p className="text-white/60 text-sm font-light tracking-wide max-w-md">
-          Balance the enduring nature of your fragrance with its radiant projection.
-        </p>
+
+        {/* Title */}
+        <div className="text-center space-y-3">
+          <h1 className="text-4xl md:text-5xl font-light text-white">
+            Define Your <span className="text-amber-400 italic font-serif">Aura</span>
+          </h1>
+          <p className="text-white/60 text-sm font-light tracking-wide max-w-md mx-auto">
+            Balance the enduring nature of your fragrance with its radiant projection.
+          </p>
+        </div>
       </div>
 
       {/* Central Visual - Overlaid Clock and Aura */}

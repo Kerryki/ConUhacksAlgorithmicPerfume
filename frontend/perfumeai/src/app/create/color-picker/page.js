@@ -108,19 +108,34 @@ export default function ColorPickerPage() {
       />
 
       {/* Header Section */}
-      <div className="text-center space-y-3 pt-8 relative z-10">
-        {/* Step indicator */}
-        <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
-          <span className="text-xs font-light tracking-widest uppercase text-amber-400">
-            Step 2 of 8
-          </span>
+      <div className="w-full relative z-10 pt-8">
+        {/* Back button and step indicator */}
+        <div className="flex items-center justify-between mb-6 px-4">
+          <Link
+            href="/create/personality"
+            className="flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            <span className="text-sm font-light tracking-wide">Back</span>
+          </Link>
+
+          {/* Step indicator */}
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
+            <span className="text-xs font-light tracking-widest uppercase text-amber-400">
+              Step 2 of 8
+            </span>
+          </div>
         </div>
-        <h1 className="text-4xl md:text-5xl font-light text-white">
-          Choose Your <span className="text-amber-400 italic font-serif">Essence</span>
-        </h1>
-        <p className="text-white/60 text-sm font-light tracking-wide max-w-md">
-          Express your aesthetic through color
-        </p>
+
+        {/* Title */}
+        <div className="text-center space-y-3">
+          <h1 className="text-4xl md:text-5xl font-light text-white">
+            Choose Your <span className="text-amber-400 italic font-serif">Essence</span>
+          </h1>
+          <p className="text-white/60 text-sm font-light tracking-wide max-w-md mx-auto">
+            Express your aesthetic through color
+          </p>
+        </div>
       </div>
 
       {/* Central Visual - Color Circle */}
