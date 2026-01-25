@@ -72,7 +72,7 @@ export default function LongevityProjectionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-between px-6 py-12 relative">
+    <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-between px-6 py-12 relative overflow-hidden">
       {/* Header Section */}
       <div className="text-center space-y-3 pt-8">
         <h1 className="text-4xl md:text-5xl font-light text-white">
@@ -94,14 +94,6 @@ export default function LongevityProjectionPage() {
           {/* Longevity Clock - On Top */}
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <LongevityClock sliderValue={sliderValue} />
-          </div>
-
-          {/* Duration Label - Below Visual */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-16">
-            <div className="text-center">
-              <div className="text-white/40 text-xs uppercase tracking-widest mb-1">Duration</div>
-              <div className="text-amber-400/60 text-sm font-light">{Math.round((100 - sliderValue) / 100 * 24)}h</div>
-            </div>
           </div>
         </div>
       </div>
@@ -131,7 +123,7 @@ export default function LongevityProjectionPage() {
           </div>
 
           {/* Custom Styled Slider with Golden Track */}
-          <div className="relative">
+          <div className="relative py-2">
             <input
               type="range"
               min="0"
@@ -139,13 +131,13 @@ export default function LongevityProjectionPage() {
               value={sliderValue}
               onInput={handleSliderChange}
               onChange={handleSliderChange}
-              className="slider-luxury w-full h-1 bg-transparent appearance-none cursor-pointer"
+              className="slider-luxury w-full h-2 bg-transparent appearance-none cursor-pointer"
               style={{
                 background: `linear-gradient(to right, 
-                  rgba(251, 191, 36, 0.3) 0%, 
-                  rgba(251, 191, 36, 0.5) ${sliderValue}%, 
-                  rgba(255, 255, 255, 0.1) ${sliderValue}%, 
-                  rgba(255, 255, 255, 0.1) 100%)`
+                  rgba(251, 191, 36, 0.4) 0%, 
+                  rgba(251, 191, 36, 0.7) ${sliderValue}%, 
+                  rgba(255, 255, 255, 0.15) ${sliderValue}%, 
+                  rgba(255, 255, 255, 0.15) 100%)`
               }}
             />
             
@@ -170,70 +162,81 @@ export default function LongevityProjectionPage() {
       <style jsx>{`
         .slider-luxury::-webkit-slider-thumb {
           appearance: none;
-          width: 24px;
-          height: 24px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+          background: radial-gradient(circle at 30% 30%, #fde68a 0%, #fbbf24 40%, #f59e0b 100%);
           cursor: pointer;
-          box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2),
-                      0 0 20px rgba(251, 191, 36, 0.4),
-                      0 2px 8px rgba(0, 0, 0, 0.5);
-          transition: all 0.3s ease;
-          border: 2px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.25),
+                      0 0 25px rgba(251, 191, 36, 0.5),
+                      0 4px 12px rgba(0, 0, 0, 0.6),
+                      inset 0 1px 3px rgba(255, 255, 255, 0.4);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 3px solid rgba(255, 255, 255, 0.4);
+          position: relative;
         }
 
         .slider-luxury::-webkit-slider-thumb:hover {
-          transform: scale(1.15);
-          box-shadow: 0 0 0 5px rgba(251, 191, 36, 0.3),
-                      0 0 30px rgba(251, 191, 36, 0.6),
-                      0 4px 12px rgba(0, 0, 0, 0.6);
-          border-color: rgba(255, 255, 255, 0.5);
+          transform: scale(1.2);
+          box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.35),
+                      0 0 40px rgba(251, 191, 36, 0.7),
+                      0 6px 16px rgba(0, 0, 0, 0.7),
+                      inset 0 1px 3px rgba(255, 255, 255, 0.5);
+          border-color: rgba(255, 255, 255, 0.6);
         }
 
         .slider-luxury::-webkit-slider-thumb:active {
-          transform: scale(1.05);
-          box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.4),
-                      0 0 25px rgba(251, 191, 36, 0.5),
-                      0 2px 8px rgba(0, 0, 0, 0.5);
+          transform: scale(1.1);
+          box-shadow: 0 0 0 8px rgba(251, 191, 36, 0.4),
+                      0 0 35px rgba(251, 191, 36, 0.6),
+                      0 4px 12px rgba(0, 0, 0, 0.6),
+                      inset 0 1px 3px rgba(255, 255, 255, 0.4);
         }
 
         .slider-luxury::-moz-range-thumb {
-          width: 24px;
-          height: 24px;
-          border: 2px solid rgba(255, 255, 255, 0.3);
+          width: 32px;
+          height: 32px;
+          border: 3px solid rgba(255, 255, 255, 0.4);
           border-radius: 50%;
-          background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+          background: radial-gradient(circle at 30% 30%, #fde68a 0%, #fbbf24 40%, #f59e0b 100%);
           cursor: pointer;
-          box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2),
-                      0 0 20px rgba(251, 191, 36, 0.4),
-                      0 2px 8px rgba(0, 0, 0, 0.5);
-          transition: all 0.3s ease;
+          box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.25),
+                      0 0 25px rgba(251, 191, 36, 0.5),
+                      0 4px 12px rgba(0, 0, 0, 0.6),
+                      inset 0 1px 3px rgba(255, 255, 255, 0.4);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .slider-luxury::-moz-range-thumb:hover {
-          transform: scale(1.15);
-          box-shadow: 0 0 0 5px rgba(251, 191, 36, 0.3),
-                      0 0 30px rgba(251, 191, 36, 0.6),
-                      0 4px 12px rgba(0, 0, 0, 0.6);
-          border-color: rgba(255, 255, 255, 0.5);
+          transform: scale(1.2);
+          box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.35),
+                      0 0 40px rgba(251, 191, 36, 0.7),
+                      0 6px 16px rgba(0, 0, 0, 0.7),
+                      inset 0 1px 3px rgba(255, 255, 255, 0.5);
+          border-color: rgba(255, 255, 255, 0.6);
         }
 
         .slider-luxury::-moz-range-thumb:active {
-          transform: scale(1.05);
-          box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.4),
-                      0 0 25px rgba(251, 191, 36, 0.5),
-                      0 2px 8px rgba(0, 0, 0, 0.5);
+          transform: scale(1.1);
+          box-shadow: 0 0 0 8px rgba(251, 191, 36, 0.4),
+                      0 0 35px rgba(251, 191, 36, 0.6),
+                      0 4px 12px rgba(0, 0, 0, 0.6),
+                      inset 0 1px 3px rgba(255, 255, 255, 0.4);
         }
 
         .slider-luxury::-webkit-slider-runnable-track {
-          height: 2px;
-          border-radius: 2px;
+          height: 6px;
+          border-radius: 8px;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4),
+                      0 1px 1px rgba(255, 255, 255, 0.05);
         }
 
         .slider-luxury::-moz-range-track {
-          height: 2px;
-          border-radius: 2px;
+          height: 6px;
+          border-radius: 8px;
           background: transparent;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4),
+                      0 1px 1px rgba(255, 255, 255, 0.05);
         }
       `}</style>
     </div>
