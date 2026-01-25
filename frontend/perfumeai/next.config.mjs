@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+  output: 'standalone', // Optimized for containerized deployments like Railway
   experimental: {
     turbo: {
       root: __dirname,

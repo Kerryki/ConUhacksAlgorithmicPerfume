@@ -85,7 +85,7 @@ function FloatingParticle({ color, delay }: { color: string; delay: number }) {
 // Intensity meter component
 function IntensityMeter({ level, isSelected, color }: { level: number; isSelected: boolean; color: string }) {
   return (
-    <div className="flex items-center justify-center gap-1.5 mt-4">
+    <div className="flex items-center justify-center gap-1 mt-2">
       {[1, 2, 3, 4].map((i) => (
         <motion.div
           key={i}
@@ -101,7 +101,7 @@ function IntensityMeter({ level, isSelected, color }: { level: number; isSelecte
           }}
         >
           <div
-            className="w-2.5 h-2.5 rounded-full transition-all duration-300"
+            className="w-2 h-2 rounded-full transition-all duration-300"
             style={{
               backgroundColor: i <= level ? color : "rgba(255,255,255,0.15)",
               boxShadow: i <= level && isSelected ? `0 0 10px ${color}` : "none",
@@ -144,7 +144,7 @@ export function AgeSelectionGrid({ onSelect, selectedAge }: AgeSelectionGridProp
       </div>
 
       {/* Age cards grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {ageRanges.map((age, index) => {
           const isSelected = selectedAge?.id === age.id
           const isHovered = hoveredId === age.id
@@ -203,12 +203,12 @@ export function AgeSelectionGrid({ onSelect, selectedAge }: AgeSelectionGridProp
                 )}
 
                 {/* Content */}
-                <div className="relative z-10 p-6 sm:p-8 flex flex-col items-center">
+                <div className="relative z-10 p-4 sm:p-5 flex flex-col items-center">
                   {/* Icon with glow */}
                   <motion.div
-                    className="relative mb-4"
+                    className="relative mb-2"
                     animate={{
-                      y: isSelected ? [0, -5, 0] : 0,
+                      y: isSelected ? [0, -3, 0] : 0,
                     }}
                     transition={{
                       duration: 2,
@@ -226,7 +226,7 @@ export function AgeSelectionGrid({ onSelect, selectedAge }: AgeSelectionGridProp
                       />
                     )}
                     <Icon
-                      className="w-8 h-8 sm:w-10 sm:h-10 transition-all duration-300 relative z-10"
+                      className="w-6 h-6 sm:w-8 sm:h-8 transition-all duration-300 relative z-10"
                       style={{
                         color: isSelected ? age.color : isHovered ? age.color : "rgba(255,255,255,0.4)",
                         filter: isSelected ? `drop-shadow(0 0 10px ${age.color})` : "none",
@@ -237,7 +237,7 @@ export function AgeSelectionGrid({ onSelect, selectedAge }: AgeSelectionGridProp
 
                   {/* Age range - large number */}
                   <motion.span
-                    className="text-2xl sm:text-3xl font-light tracking-wide mb-1"
+                    className="text-xl sm:text-2xl font-light tracking-wide"
                     style={{
                       color: isSelected ? "#ffffff" : "rgba(255,255,255,0.8)",
                       textShadow: isSelected ? `0 0 30px ${age.color}` : "none",
@@ -248,7 +248,7 @@ export function AgeSelectionGrid({ onSelect, selectedAge }: AgeSelectionGridProp
 
                   {/* Label */}
                   <motion.span
-                    className="text-sm sm:text-base font-light tracking-wider mb-2"
+                    className="text-xs sm:text-sm font-light tracking-wider mb-1"
                     style={{
                       color: isSelected ? age.color : "rgba(255,255,255,0.6)",
                     }}
@@ -260,7 +260,7 @@ export function AgeSelectionGrid({ onSelect, selectedAge }: AgeSelectionGridProp
                   <AnimatePresence>
                     {(isSelected || isHovered) && (
                       <motion.span
-                        className="text-xs font-light tracking-wide text-center italic"
+                        className="text-[10px] font-light tracking-wide text-center italic"
                         style={{ color: "rgba(255,255,255,0.6)" }}
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
@@ -281,7 +281,7 @@ export function AgeSelectionGrid({ onSelect, selectedAge }: AgeSelectionGridProp
 
                   {/* Intensity label */}
                   <motion.span
-                    className="text-[10px] tracking-[0.2em] uppercase mt-2 font-light"
+                    className="text-[9px] tracking-[0.15em] uppercase mt-1 font-light"
                     style={{
                       color: isSelected ? age.color : "rgba(255,255,255,0.4)",
                     }}

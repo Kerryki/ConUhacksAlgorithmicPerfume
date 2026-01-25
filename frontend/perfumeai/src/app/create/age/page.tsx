@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, ChevronLeft } from "lucide-react"
 import { HexagonBackground } from "./components/hexagon-background"
@@ -13,14 +13,10 @@ type AgeRange = typeof ageRanges[number]
 export default function AgePage() {
   const router = useRouter()
   const [selectedAge, setSelectedAge] = useState<AgeRange | null>(null)
-  const [showConfirmation, setShowConfirmation] = useState(false)
 
   // Handle age selection
   const handleSelect = (age: AgeRange | null) => {
     setSelectedAge(age)
-    if (age) {
-      setShowConfirmation(true)
-    }
   }
 
   // Handle continue
@@ -132,10 +128,10 @@ export default function AgePage() {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col px-4 sm:px-6 py-8 sm:py-12">
+      <div className="relative z-10 h-screen flex flex-col px-4 sm:px-6 py-4 sm:py-6">
         {/* Header */}
         <motion.header
-          className="flex items-center justify-between mb-8"
+          className="flex items-center justify-between mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -150,7 +146,7 @@ export default function AgePage() {
 
           {/* Step indicator */}
           <motion.div
-            className="flex items-center gap-3 px-4 py-2 rounded-full backdrop-blur-sm"
+            className="flex items-center gap-3 px-4 py-1.5 rounded-full backdrop-blur-sm"
             style={{
               background: selectedAge
                 ? `linear-gradient(135deg, ${selectedAge.color}15, transparent)`
@@ -178,19 +174,19 @@ export default function AgePage() {
         <div className="flex-1 flex flex-col items-center justify-center max-w-5xl mx-auto w-full">
           {/* Title section */}
           <motion.div
-            className="text-center mb-10 sm:mb-14"
+            className="text-center mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <motion.span
-              className="text-xs tracking-[0.3em] uppercase font-light mb-3 block"
+              className="text-xs tracking-[0.3em] uppercase font-light mb-2 block"
               style={{ color: "rgba(255,255,255,0.5)" }}
             >
               Life Stage
             </motion.span>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-wide text-white mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-white mb-2">
               Your{" "}
               <motion.span
                 className="italic font-serif"
@@ -205,7 +201,7 @@ export default function AgePage() {
               </motion.span>
             </h1>
 
-            <p className="text-sm sm:text-base font-light tracking-wide text-white/50 max-w-md mx-auto">
+            <p className="text-sm font-light tracking-wide text-white/50 max-w-md mx-auto">
               Scent intensity and depth evolve with life experience
             </p>
           </motion.div>
@@ -215,7 +211,7 @@ export default function AgePage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-full mb-10"
+            className="w-full mb-4"
           >
             <AgeSelectionGrid
               onSelect={handleSelect}
@@ -223,58 +219,22 @@ export default function AgePage() {
             />
           </motion.div>
 
-          {/* Selection info card */}
-          <AnimatePresence>
-            {selectedAge && (
-              <motion.div
-                className="w-full max-w-md mx-auto mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.4 }}
-              >
-                <div
-                  className="rounded-2xl backdrop-blur-sm p-6 text-center"
-                  style={{
-                    background: `linear-gradient(135deg, ${selectedAge.color}10, transparent)`,
-                    border: `1px solid ${selectedAge.color}30`,
-                  }}
-                >
-                  <p className="text-sm font-light text-white/70 mb-2">
-                    You selected
-                  </p>
-                  <p
-                    className="text-xl font-light tracking-wide"
-                    style={{ color: selectedAge.color }}
-                  >
-                    {selectedAge.label}
-                  </p>
-                  <p className="text-xs font-light text-white/50 mt-2 italic">
-                    {selectedAge.description}
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Continue button */}
-          <AnimatePresence>
-            {selectedAge && (
-              <motion.div
-                className="flex flex-col items-center gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
+          {/* Continue button or hint */}
+          <div className="h-14 flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              {selectedAge ? (
                 <motion.button
+                  key="continue"
                   onClick={handleContinue}
-                  className="relative group px-10 py-4 rounded-full font-light tracking-widest text-sm uppercase overflow-hidden"
+                  className="relative group px-8 py-3 rounded-full font-light tracking-widest text-sm uppercase overflow-hidden"
                   style={{
                     background: `linear-gradient(135deg, ${selectedAge.color}, ${selectedAge.color}cc)`,
                     color: "#050505",
                     boxShadow: `0 0 30px ${selectedAge.color}50, 0 0 60px ${selectedAge.color}30`,
                   }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -312,28 +272,24 @@ export default function AgePage() {
                     </motion.span>
                   </span>
                 </motion.button>
-
-
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Hint when no selection */}
-          {!selectedAge && (
-            <motion.p
-              className="text-xs tracking-wider text-white/30 text-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              Select your life stage to continue
-            </motion.p>
-          )}
+              ) : (
+                <motion.p
+                  key="hint"
+                  className="text-xs tracking-wider text-white/30 text-center"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  Select your life stage to continue
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Footer note */}
         <motion.footer
-          className="text-center mt-8"
+          className="text-center mt-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}

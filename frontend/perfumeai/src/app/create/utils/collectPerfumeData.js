@@ -2,6 +2,9 @@
  * Utility functions for collecting and submitting perfume creation data
  */
 
+// API base URL - uses environment variable in production, localhost in development
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
 /**
  * Collects all perfume data from localStorage
  * @returns {Object} Object containing all collected data from each step
@@ -52,7 +55,7 @@ export function collectAllPerfumeData() {
  */
 export async function submitPerfumeData(data) {
   try {
-    const response = await fetch('http://localhost:5000/create-scent', {
+    const response = await fetch(`${API_BASE_URL}/create-scent`, {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json' 

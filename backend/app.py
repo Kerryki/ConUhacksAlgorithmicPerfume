@@ -103,7 +103,11 @@ def get_scent_vector(accords_data):
 
 # Pre-load perfume database
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, '..', 'data', 'data_v3.csv')
+# Support both local development and Railway deployment paths
+# First check for data file in backend folder (Railway), then fall back to data folder (local dev)
+DATA_PATH_RAILWAY = os.path.join(BASE_DIR, 'data_v3.csv')
+DATA_PATH_LOCAL = os.path.join(BASE_DIR, '..', 'data', 'data_v3.csv')
+DATA_PATH = os.getenv('DATA_PATH', DATA_PATH_RAILWAY if os.path.exists(DATA_PATH_RAILWAY) else DATA_PATH_LOCAL)
 df = pd.read_csv(DATA_PATH)
 db_vectors = np.array([get_scent_vector(row['main_accords_pct'])
                       for _, row in df.iterrows()])

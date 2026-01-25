@@ -1,0 +1,16 @@
+# Railway configuration for monorepo deployment
+# This file configures how Railway deploys the backend and frontend services
+
+[build]
+builder = "nixpacks"
+
+# Backend service configuration is handled via Railway dashboard:
+# - Root Directory: backend
+# - Start Command: gunicorn app:app --bind 0.0.0.0:$PORT
+# - Environment Variables: GEMINI_API_KEY, DATA_PATH (optional)
+
+# Frontend service configuration is handled via Railway dashboard:
+# - Root Directory: frontend/perfumeai
+# - Build Command: npm run build
+# - Start Command: npm start
+# - Environment Variables: NEXT_PUBLIC_API_URL (set to backend URL)
