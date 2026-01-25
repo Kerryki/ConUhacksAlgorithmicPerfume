@@ -74,6 +74,9 @@ class Recipe(BaseModel):
         description="Map of ingredient names to their percentage (integer)")
     drops: Dict[str, int] = Field(
         description="A map of the perfume 'code' from the dataset to the number of drops to use. Max 5-6 different codes.")
+    projected_performance: Dict[str, float] = Field(
+        description="The calculated average longevity and sillage score of this specific blend."
+    )
 
 
 def find_best_oils(target_longevity, target_sillage, target_gender, target_season, df):
@@ -114,35 +117,26 @@ def create_scent():
         top_oils_df = find_best_oils(
             longevity_pref, sillage_pref, gender_val, target_season, pd.read_csv('../data/data_v3.csv'))
 
-        oils_context = ""
-        for _, row in top_oils_df.iterrows():
-            oils_context += (
-                f"ID: {row['code']} | Season: {row['season_score']} | "
-                f"Accords: {row['main_accords_pct']} | Recipe: {row['top_notes_pct']}, {row['middle_notes_pct']}, {row['base_notes_pct']} | "
-                f"Gender: {row['gender_score']} | Season Score: {row['season_score']} | Day/Night: {row['day_night_score']} | "
-                f"Longevity: {row['longevity_score']} | Sillage: {row['sillage_score']}"
-            )
+        oils_context = "\n".join([
+            f"ID: {row['code']} | Gender: {row['gender_score']} | Season: {row['season_score']} | "
+            f"Day/Night: {row['day_night_score']} | Longevity: {row['longevity_score']} | "
+            f"Accords: {row['main_accords_pct']}"
+            for _, row in top_oils_df.iterrows()
+        ])
 
-            prompt = f"""
-        You are a Master Alchemist. Use ONLY the following Recommended Oils to create a blend.
+        prompt = f"""
+        You are a Master Alchemist. User wants a vibe of '{scent_identity}'.
 
-        RECOMMENDED OILS:
+        LABORATORY INVENTORY (Selected Matches):
         {oils_context}
 
-        USER REQUEST:
-        Vibe: {scent_identity} |
-        Target Gender: {gender_val} (0=Fem, 100=Masc) |
-        Season: {target_season} (0=Winter, 1=Spring, 2=Summer, 3=Fall) |
-        Time of Day: {time_of_day} (0=Day, 100=Night) |
-        Desired Longevity: {longevity_pref} |
-        Desired Sillage: {sillage_pref} |
-
-
-        TASK:
-        1. Select 3-5 IDs from the recommended list above.
-        2. Assign drops totaling exactly 100.
-        3. Name the creation and explain why these specific IDs were blended to match the user's vibe.
+        INSTRUCTIONS:
+        - Analyze the Longevity and Sillage scores. If the user wants {longevity_pref} longevity,
+          prioritize IDs with high Longevity scores.
+        - Create a 'Persona' for this scent (e.g., 'The Midnight Scholar').
+        - Output a JSON recipe where 'drops' sum to 100.
         """
+
         response = client.models.generate_content(
             model=model,
             contents=prompt,
