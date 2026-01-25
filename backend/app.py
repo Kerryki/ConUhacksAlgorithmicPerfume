@@ -57,10 +57,12 @@ class Recipe(BaseModel):
         description="Final ingredient breakdown")
     # pyramid: Dict[str, List[str]] = Field(
     #     description="Ingredients in 'top', 'middle', and 'base' layers")
-    drops: Dict[str, int] = Field(description="ID codes and exact drop counts (Sum must be 100)")
+    drops: Dict[str, int] = Field(
+        description="ID codes and exact drop counts (Sum must be 100)")
     projected_performance: Dict[str, float] = Field(
         description="Predicted longevity and sillage scores")
-    note_distribution: Dict[str, float] = Field(description="Total percentage of Top, Mid, and Base notes in the blend")
+    note_distribution: Dict[str, float] = Field(
+        description="Total percentage of Top, Mid, and Base notes in the blend")
 
 
 # --- KNOWLEDGE BASE ---
@@ -149,19 +151,53 @@ def get_best_candidates(user_prefs, df, db_vectors):
 def create_scent():
     data = request.json
 
-    season_map = {1: 0, 2: 33, 3: 66, 4: 100}
+    # season_map = {1: 0, 2: 33, 3: 66, 4: 100}
 
-    # 1. Capture User Intent
-    user_prefs = {
-        'scent_identity': data.get('scent_identity', {'floral': 100}), # defaults to floral
-        'gender': data.get('gender_val', 50),
-        'season': season_map.get(data.get('season_val', 1), 50),
-        'day': data.get('time_of_day', 50),
-        'longevity': data.get('longevity', 50),
-        'sillage': data.get('sillage', 50)
-    }
+    # # 1. Capture User Intent
+    # user_prefs = {
+    #     'scent_identity': data.get('scent_identity', {'floral': 100}), # defaults to floral
+    #     'gender': data.get('gender_val', 50),
+    #     'season': season_map.get(data.get('season_val', 1), 50),
+    #     'day': data.get('time_of_day', 50),
+    #     'longevity': data.get('longevity', 50),
+    #     'sillage': data.get('sillage', 50)
+    # }
 
     try:
+        # Scent Identity (Already a dict)
+        scent_identity = data.get('scent_identity', {'floral': 100})
+
+        # Longevity & Sillage (Convert 0.0-1.0 to 0-100)
+        longevity_data = data.get('longevity_data', {})
+        longevity_pref = longevity_data.get('longevity_score', 0.5) * 100
+        sillage_pref = longevity_data.get('projection_score', 0.5) * 100
+
+        # Gender (Convert 0.52 to 52)
+        gender_val = data.get('gender_data', {}).get(
+            'gender_expression', 0.5) * 100
+
+        # Time and Season
+        time_of_day = data.get('time_data', {}).get('time_value', 50)
+        season_input = data.get('weather_data', {}).get(
+            'season', {}).get('value', 1)
+
+        # Metadata for the AI Persona
+        user_name = data.get('personal_name_data', {}).get(
+            'personal_name', 'Traveler')
+        personality = data.get('personality_data', {}).get(
+            'personality', {}).get('name', 'Adventurer')
+
+        season_map = {1: 0, 2: 33, 3: 66, 4: 100}
+        target_season_score = season_map.get(season_input, 50)
+
+        user_prefs = {
+            'scent_identity': scent_identity,
+            'gender': gender_val,
+            'season': target_season_score,
+            'day': time_of_day,
+            'longevity': longevity_pref,
+            'sillage': sillage_pref
+        }
         # 2. CALCULATE VIBE SIMILARITY
         top_matches = get_best_candidates(user_prefs, df, db_vectors)
 
@@ -173,21 +209,25 @@ def create_scent():
             for _, row in top_matches.iterrows()
         ])
 
-        prompt = f"""
-        You are a Master Alchemist. Formulate a perfume based on these Laboratory Oils:
+        age_range = data.get('age_data', {}).get('ageGroup', {}).get('label', 'Adult')
+        intensity = data.get('age_data', {}).get('ageGroup', {}).get('intensityLevel', 'Moderate')
 
-        LABORATORY INVENTORY:
+        prompt = f"""
+        System: You are a Master Alchemist. A seeker named {user_name} with the spirit of an {personality} requests a formula.
+        They are a {age_range} seeking a {intensity} fragrance.
+        
+        LABORATORY INVENTORY (Best Matches):
         {oils_context}
 
-        USER REQUIREMENTS:
-        - Vibe: {user_prefs['scent_identity']}
-        - Performance: {user_prefs['longevity']} Longevity, {user_prefs['sillage']} Sillage
-        - Context: Season Score {user_prefs['season']}, Time Score {user_prefs['day']}
+        USER PROFILE:
+        - Vibe: {scent_identity}
+        - Performance: {longevity_pref} Longevity, {sillage_pref} Sillage
+        - Context: Season Score {target_season_score}, Time Score {time_of_day}
 
-        INSTRUCTIONS:
-        1. Select 3-5 IDs. Use only these to create the 'drops' list (Sum = 100).
-        2. Assign ingredients to 'pyramid' (top, middle, base) based on their volatility.
-        3. In 'projected_performance', calculate the weighted average of the chosen IDs' scores.
+        TASK:
+        1. Select 3-5 IDs. Create a recipe where 'drops' sum to 100.
+        2. Assign notes to 'pyramid' (top, middle, base).
+        3. Write a poetic description tailored to an '{personality}' archetype.
         """
 
         response = client.models.generate_content(
@@ -204,7 +244,7 @@ def create_scent():
         available_ids = top_matches['code'].tolist()
         # Run the Guardrail
         recipe_data = validate_and_fix_recipe(recipe_data, available_ids, df)
-        
+
         # 2. CALCULATE NOTE DISTRIBUTION
         # We look up each ID in our drops and calculate the aggregate pyramid
         total_top = 0.0
@@ -216,7 +256,8 @@ def create_scent():
             # Find the row for this perfume oil
             matching_rows = df[df['code'] == code]
             if matching_rows.empty:
-                continue # Skip IDs that don't exist in your database (avoid hallucinations)
+                # Skip IDs that don't exist in your database (avoid hallucinations)
+                continue
             oil_row = matching_rows.iloc[0]
 
             # Sum the percentages in each layer for this specific oil
@@ -224,7 +265,7 @@ def create_scent():
             top_weight = sum(safe_eval(oil_row['top_notes_pct']).values())
             mid_weight = sum(safe_eval(oil_row['middle_notes_pct']).values())
             base_weight = sum(safe_eval(oil_row['base_notes_pct']).values())
-            
+
             # Weighted addition to the total blend
             total_top += (top_weight * drops)
             total_mid += (mid_weight * drops)
@@ -237,31 +278,34 @@ def create_scent():
             "base": round(total_base / total_drops, 2) if total_drops > 0 else 0
         }
 
-        
         return jsonify(recipe_data.model_dump())
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 def validate_and_fix_recipe(recipe_data, available_ids, df):
     # 1. Clean IDs (Remove anything the AI hallucinated)
-    clean_drops = {k: v for k, v in recipe_data.drops.items() if k in available_ids}
-    
+    clean_drops = {k: v for k, v in recipe_data.drops.items()
+                   if k in available_ids}
+
     # 2. Fix the Math (Normalize to 100 drops)
     current_total = sum(clean_drops.values())
     if current_total != 100 and current_total > 0:
         # Scale every drop count so they sum to exactly 100
         factor = 100 / current_total
-        clean_drops = {k: int(round(v * factor)) for k, v in clean_drops.items()}
-        
+        clean_drops = {k: int(round(v * factor))
+                       for k, v in clean_drops.items()}
+
         # Adjust for rounding errors (ensure sum is exactly 100)
         diff = 100 - sum(clean_drops.values())
         if diff != 0:
             first_key = list(clean_drops.keys())[0]
             clean_drops[first_key] += diff
-            
+
     recipe_data.drops = clean_drops
     return recipe_data
+
 
 if __name__ == '__main__':
     app.run(
