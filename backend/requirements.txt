@@ -1,0 +1,5 @@
+Flask==3.1.2          # latest on PyPI [page:2]
+flask-cors==6.0.2     # latest on PyPI [web:22][web:24]
+python-dotenv==1.1.0  # latest on PyPI [web:3]
+pandas==3.0.0         # latest on PyPI [page:1]
+numpy==2.4.1          # latest security-supported (2.4.x) [web:21]
