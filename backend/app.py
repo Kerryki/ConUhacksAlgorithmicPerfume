@@ -63,6 +63,10 @@ class Recipe(BaseModel):
         description="Predicted longevity and sillage scores")
     note_distribution: Dict[str, float] = Field(
         description="Total percentage of Top, Mid, and Base notes in the blend")
+    # new
+    detailed_pyramid: Dict[str, Dict[str, float]] = Field(
+        description="A mapping of 'top', 'middle', and 'base' to their specific ingredient names and weighted percentages"
+    )
 
 
 # --- KNOWLEDGE BASE ---
@@ -255,6 +259,7 @@ def create_scent():
         total_mid = 0.0
         total_base = 0.0
         total_drops = sum(recipe_data.drops.values())
+        detailed_pyramid = {"top": {}, "middle": {}, "base": {}}
 
         for code, drops in recipe_data.drops.items():
             # Find the row for this perfume oil
@@ -264,16 +269,18 @@ def create_scent():
                 continue
             oil_row = matching_rows.iloc[0]
 
-            # Sum the percentages in each layer for this specific oil
-            # (e.g., if top_notes_pct is {'Lemon': 10, 'Lime': 5}, layer_weight is 15)
-            top_weight = sum(safe_eval(oil_row['top_notes_pct']).values())
-            mid_weight = sum(safe_eval(oil_row['middle_notes_pct']).values())
-            base_weight = sum(safe_eval(oil_row['base_notes_pct']).values())
+            for layer in ["top", "middle", "base"]:
+                notes_dict = safe_eval(oil_row[f"{layer}_notes_pct"])
+                for note, pct in notes_dict.items():
+                    # Calculate the weighted contribution of this note to the total blend
+                    # (Note % in oil) * (Drops of oil / Total Drops)
+                    contribution = (pct * drops) / total_drops
+                    detailed_pyramid[layer][note] = detailed_pyramid[layer].get(note, 0) + round(contribution, 2)
 
-            # Weighted addition to the total blend
-            total_top += (top_weight * drops)
-            total_mid += (mid_weight * drops)
-            total_base += (base_weight * drops)
+                    # Also keep track of layer totals for the distribution field
+                    if layer == "top": total_top += contribution
+                    elif layer == "middle": total_mid += contribution
+                    elif layer == "base": total_base += contribution
 
         # Normalize by total drops to get percentages (0-100)
         recipe_data.note_distribution = {
@@ -281,8 +288,14 @@ def create_scent():
             "middle": round(total_mid / total_drops, 2) if total_drops > 0 else 0,
             "base": round(total_base / total_drops, 2) if total_drops > 0 else 0
         }
+        recipe_data.detailed_pyramid = detailed_pyramid
 
-        return jsonify(recipe_data.model_dump())
+        result = {
+            **data, 
+            **recipe_data.model_dump()
+        }
+        # return jsonify(recipe_data.model_dump())
+        return jsonify(result)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
