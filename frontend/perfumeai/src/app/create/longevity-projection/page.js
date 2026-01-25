@@ -82,7 +82,7 @@ export default function LongevityProjectionPage() {
         {/* Title */}
         <div className="text-center space-y-3">
           <h1 className="text-4xl md:text-5xl font-light text-white">
-            Define Your <span className="text-amber-400 italic font-serif">Aura</span>
+            Projection / <span className="text-amber-400 italic font-serif">Longevity</span>
           </h1>
           <p className="text-white/60 text-sm font-light tracking-wide max-w-md mx-auto">
             Balance the enduring nature of your fragrance with its radiant projection.

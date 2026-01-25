@@ -291,11 +291,10 @@ export default function GenderExpressionPage() {
               className="text-xs tracking-[0.3em] uppercase font-light mb-3 block"
               style={{ color: "rgba(255,255,255,0.5)" }}
             >
-              Gender Expression
             </motion.span>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-wide text-white mb-4">
-              Define Your{" "}
+              {" "}
               <motion.span
                 className="italic font-serif"
                 animate={{
@@ -305,7 +304,7 @@ export default function GenderExpressionPage() {
                 }}
                 style={{ color: hasDragged ? currentCategory.color : "#fbbf24" }}
               >
-                Presence
+                Gender
               </motion.span>
             </h1>
 

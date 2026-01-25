@@ -1166,11 +1166,11 @@ var _s = __turbopack_context__.k.signature();
 // Floating particle component
 function FloatingParticles(t0) {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(6);
-    if ($[0] !== "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3") {
+    if ($[0] !== "0d9982257a2fbf7eed37b48c0e8cffad359e31aa9b0f5d5ef28ca4dc3bd2dbf0") {
         for(let $i = 0; $i < 6; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3";
+        $[0] = "0d9982257a2fbf7eed37b48c0e8cffad359e31aa9b0f5d5ef28ca4dc3bd2dbf0";
     }
     const { color, count: t1 } = t0;
     const count = t1 === undefined ? 20 : t1;
@@ -1247,11 +1247,11 @@ _c = FloatingParticles;
 function PersonalityPage() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(61);
-    if ($[0] !== "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3") {
+    if ($[0] !== "0d9982257a2fbf7eed37b48c0e8cffad359e31aa9b0f5d5ef28ca4dc3bd2dbf0") {
         for(let $i = 0; $i < 61; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3";
+        $[0] = "0d9982257a2fbf7eed37b48c0e8cffad359e31aa9b0f5d5ef28ca4dc3bd2dbf0";
     }
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [selectedPersonality, setSelectedPersonality] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -1639,7 +1639,7 @@ function PersonalityPage() {
                     style: t20,
                     animate: t21,
                     transition: t22,
-                    children: "Essence"
+                    children: "Personality"
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
                     lineNumber: 303,
@@ -1827,8 +1827,7 @@ function PersonalityPage() {
                                 },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs uppercase tracking-widest text-white/40 font-light mb-1",
-                                        children: "Selected Essence"
+                                        className: "text-xs uppercase tracking-widest text-white/40 font-light mb-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
                                         lineNumber: 407,
@@ -1844,7 +1843,7 @@ function PersonalityPage() {
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
                                         lineNumber: 407,
-                                        columnNumber: 115
+                                        columnNumber: 97
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-xs text-white/50 font-light mt-1.5",

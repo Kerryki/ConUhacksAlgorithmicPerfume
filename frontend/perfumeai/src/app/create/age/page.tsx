@@ -201,7 +201,7 @@ export default function AgePage() {
                 }}
                 style={{ color: selectedAge ? selectedAge.color : "#fbbf24" }}
               >
-                Maturity
+                Age
               </motion.span>
             </h1>
 

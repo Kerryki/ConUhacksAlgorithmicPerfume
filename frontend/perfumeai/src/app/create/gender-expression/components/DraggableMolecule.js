@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 // Define three molecule configurations (relative to center) - scaled down by 0.4
@@ -74,6 +74,17 @@ const getBondColor = (genderValue) => {
 export default function DraggableMolecule({ genderValue, onPositionChange, constraintsRef }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640); // sm breakpoint
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Spring physics for smooth motion
   const springConfig = { stiffness: 80, damping: 25, mass: 1 };
@@ -130,17 +141,16 @@ export default function DraggableMolecule({ genderValue, onPositionChange, const
         x: springX,
         y: springY,
         cursor: 'grab',
-        width: '80px',
-        height: '80px',
         pointerEvents: 'auto',
       }}
-      className="relative"
+      className="relative sm:w-20 sm:h-20 w-10 h-10"
     >
       <svg
         width="80"
         height="80"
-        viewBox="-40 -40 80 80"
-        className="overflow-visible"
+        viewBox={isMobile ? "-24 -24 48 48" : "-48 -48 96 96"}
+        className="w-full h-full"
+        style={{ overflow: 'visible' }}
       >
         {/* Bonds (draw first so they appear behind atoms) */}
         {bonds.map(([i, j], index) => {
@@ -164,18 +174,23 @@ export default function DraggableMolecule({ genderValue, onPositionChange, const
         })}
 
         {/* Atoms */}
-        {currentConfig.map((atom, index) => (
+        {currentConfig.map((atom, index) => {
+          const glowRadius = isMobile ? atom.radius + 1 : atom.radius + 8;
+          const blurAmount = isMobile ? 2 : 8;
+          const glowScale = isMobile ? [1, 1.02, 1] : [1, 1.1, 1];
+          
+          return (
           <motion.g key={`atom-${index}`}>
             {/* Glow effect */}
             <motion.circle
               cx={atom.x}
               cy={atom.y}
-              r={atom.radius + 8}
+              r={glowRadius}
               fill={atomColor}
               opacity="0.3"
-              filter="blur(8px)"
+              filter={`blur(${blurAmount}px)`}
               animate={{
-                scale: [1, 1.1, 1],
+                scale: glowScale,
                 opacity: [0.3, 0.5, 0.3],
               }}
               transition={{
@@ -217,7 +232,8 @@ export default function DraggableMolecule({ genderValue, onPositionChange, const
               style={{ pointerEvents: 'none' }}
             />
           </motion.g>
-        ))}
+          );
+        })}
       </svg>
     </motion.div>
   );

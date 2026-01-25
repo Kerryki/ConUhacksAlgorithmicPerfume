@@ -206,7 +206,7 @@ export default function PersonalityPage() {
                   } : {}}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  Essence
+                  Personality
                 </motion.span>
               </h1>
 
@@ -255,7 +255,7 @@ export default function PersonalityPage() {
                       border: `1px solid ${selectedPersonality.accentColor}30`,
                     }}
                   >
-                    <p className="text-xs uppercase tracking-widest text-white/40 font-light mb-1">Selected Essence</p>
+                    <p className="text-xs uppercase tracking-widest text-white/40 font-light mb-1"></p>
                     <p 
                       className="text-2xl font-light tracking-wide"
                       style={{ 

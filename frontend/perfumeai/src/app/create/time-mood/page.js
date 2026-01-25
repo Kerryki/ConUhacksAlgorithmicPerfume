@@ -516,7 +516,7 @@ export default function TimeMoodPage() {
 
           {/* Skip */}
           <button className="text-xs tracking-wider text-white/40 hover:text-white/70 transition-colors font-light">
-            Skip this step
+            
           </button>
         </motion.div>
 

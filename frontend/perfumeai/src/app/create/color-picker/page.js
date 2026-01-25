@@ -106,7 +106,7 @@ export default function ColorPickerPage() {
         {/* Title */}
         <div className="text-center space-y-3">
           <h1 className="text-4xl md:text-5xl font-light text-white">
-            Choose Your <span className="text-amber-400 italic font-serif">Essence</span>
+            Your Favorite <span className="text-amber-400 italic font-serif">Color</span>
           </h1>
           <p className="text-white/60 text-sm font-light tracking-wide max-w-md mx-auto">
             Express your aesthetic through color
