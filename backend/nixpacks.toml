@@ -7,7 +7,7 @@ providers = ["python"]
 nixPkgs = ["python311"]
 
 [phases.build]
-cmds = ["cd backend && pip install -r requirements.txt"]
+cmds = ["pip install -r requirements.txt"]
 
 [start]
-cmd = "cd backend && gunicorn app:app --bind 0.0.0.0:$PORT"
+cmd = "gunicorn app:app --bind 0.0.0.0:$PORT"
