@@ -78,13 +78,30 @@ class Recipe(BaseModel):
         description="The calculated average longevity and sillage score of this specific blend."
     )
 
+def load_ingredient_categories():
+    try:
+        # perfumes.csv has columns: Floral, Oriental, Fresh, Woody
+        cat_df = pd.read_csv('../data/perfumes.csv')
+        categories = {}
+        for col in cat_df.columns:
+            # Clean up the list (remove NaNs and whitespace)
+            items = cat_df[col].dropna().unique().tolist()
+            categories[col] = items
+        return categories
+    except Exception as e:
+        print(f"Error loading categories: {e}")
+        return {}
 
-def find_best_oils(target_longevity, target_sillage, target_gender, target_season, df):
+INGREDIENT_CATEGORIES = load_ingredient_categories()
+
+
+def find_best_oils(target_longevity, target_sillage, target_gender, target_season, target_day, df):
     mask = (
         (df['longevity_score'].between(target_longevity - 25, target_longevity + 25)) &
         (df['sillage_score'].between(target_sillage - 25, target_sillage + 25)) &
         (df['gender_score'].between(target_gender - 25, target_gender + 25)) &
-        (df['season_score'].between(target_season - 25, target_season + 25))
+        (df['season_score'].between(target_season - 25, target_season + 25)) &
+        (df['day_night_score'].between(target_day - 25, target_day + 25))
     )
 
     matches = df[mask]
@@ -115,7 +132,7 @@ def create_scent():
 
     try:
         top_oils_df = find_best_oils(
-            longevity_pref, sillage_pref, gender_val, target_season, pd.read_csv('../data/data_v3.csv'))
+            longevity_pref, sillage_pref, gender_val, target_season, time_of_day,pd.read_csv('../data/data_v3.csv'))
 
         oils_context = "\n".join([
             f"ID: {row['code']} | Gender: {row['gender_score']} | Season: {row['season_score']} | "
