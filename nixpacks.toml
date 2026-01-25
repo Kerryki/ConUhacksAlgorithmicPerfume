@@ -4,7 +4,7 @@
 providers = ["node"]
 
 [phases.setup]
-nixPkgs = ["nodejs_20", "npm"]
+nixPkgs = ["nodejs_20"]
 
 [phases.build]
 cmds = ["cd frontend/perfumeai && npm install && npm run build"]
