@@ -32,7 +32,6 @@ export default function SeasonPage() {
         value: selectedSeason.value, // 1=summer, 2=fall, 3=winter, 4=spring
         scentProfile: selectedSeason.scentProfile,
       },
-      timestamp: new Date().toISOString(),
     }
 
     console.log("Season selection payload:", JSON.stringify(payload, null, 2))

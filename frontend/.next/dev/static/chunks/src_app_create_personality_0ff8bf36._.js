@@ -1166,11 +1166,11 @@ var _s = __turbopack_context__.k.signature();
 // Floating particle component
 function FloatingParticles(t0) {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(6);
-    if ($[0] !== "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5") {
+    if ($[0] !== "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3") {
         for(let $i = 0; $i < 6; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5";
+        $[0] = "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3";
     }
     const { color, count: t1 } = t0;
     const count = t1 === undefined ? 20 : t1;
@@ -1247,11 +1247,11 @@ _c = FloatingParticles;
 function PersonalityPage() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(61);
-    if ($[0] !== "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5") {
+    if ($[0] !== "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3") {
         for(let $i = 0; $i < 61; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "5f19af93d06168327a57851121a393a7009eafd20fd50e52c67c00990bf391f5";
+        $[0] = "cf29b9aeec13edfc71d27212718d364e918cd21699eb3ce993c0aafd7e5c0aa3";
     }
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [selectedPersonality, setSelectedPersonality] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -1303,8 +1303,7 @@ function PersonalityPage() {
                         id: selectedPersonality.id,
                         name: selectedPersonality.name,
                         title: selectedPersonality.title
-                    },
-                    timestamp: new Date().toISOString()
+                    }
                 };
                 console.log("Personality payload:", JSON.stringify(payload, null, 2));
                 localStorage.setItem("perfume_personality_data", JSON.stringify(payload));
@@ -1324,7 +1323,7 @@ function PersonalityPage() {
     if ($[8] === Symbol.for("react.memo_cache_sentinel")) {
         t4 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$create$2f$personality$2f$components$2f$hexagon$2d$background$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HexagonBackground"], {}, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 136,
+            lineNumber: 135,
             columnNumber: 10
         }, this);
         $[8] = t4;
@@ -1355,7 +1354,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 151,
+                    lineNumber: 150,
                     columnNumber: 8
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1386,7 +1385,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 153,
+                    lineNumber: 152,
                     columnNumber: 12
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1405,7 +1404,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 165,
+                    lineNumber: 164,
                     columnNumber: 12
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1424,7 +1423,7 @@ function PersonalityPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 173,
+                    lineNumber: 172,
                     columnNumber: 12
                 }, this),
                 showParticles && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FloatingParticles, {
@@ -1432,13 +1431,13 @@ function PersonalityPage() {
                     count: 25
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 181,
+                    lineNumber: 180,
                     columnNumber: 30
                 }, this)
             ]
         }, selectedPersonality.id, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 143,
+            lineNumber: 142,
             columnNumber: 33
         }, this);
         $[9] = selectedPersonality;
@@ -1454,7 +1453,7 @@ function PersonalityPage() {
             children: t5
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 190,
+            lineNumber: 189,
             columnNumber: 10
         }, this);
         $[12] = t5;
@@ -1468,7 +1467,7 @@ function PersonalityPage() {
             className: "absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]"
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 198,
+            lineNumber: 197,
             columnNumber: 10
         }, this);
         $[14] = t7;
@@ -1508,7 +1507,7 @@ function PersonalityPage() {
                     className: "w-5 h-5"
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 228,
+                    lineNumber: 227,
                     columnNumber: 114
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1516,13 +1515,13 @@ function PersonalityPage() {
                     children: "Back"
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 228,
+                    lineNumber: 227,
                     columnNumber: 149
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 228,
+            lineNumber: 227,
             columnNumber: 11
         }, this);
         $[18] = t11;
@@ -1554,7 +1553,7 @@ function PersonalityPage() {
             children: "Step 1 of 8"
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 250,
+            lineNumber: 249,
             columnNumber: 11
         }, this);
         $[22] = t15;
@@ -1574,13 +1573,13 @@ function PersonalityPage() {
                     children: t16
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 260,
+                    lineNumber: 259,
                     columnNumber: 72
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 260,
+            lineNumber: 259,
             columnNumber: 11
         }, this);
         $[24] = t14;
@@ -1643,13 +1642,13 @@ function PersonalityPage() {
                     children: "Essence"
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 304,
+                    lineNumber: 303,
                     columnNumber: 105
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 304,
+            lineNumber: 303,
             columnNumber: 11
         }, this);
         $[33] = t20;
@@ -1665,7 +1664,7 @@ function PersonalityPage() {
             children: "Select the archetype that resonates with your inner self"
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 313,
+            lineNumber: 312,
             columnNumber: 11
         }, this);
         $[36] = t24;
@@ -1682,7 +1681,7 @@ function PersonalityPage() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 320,
+            lineNumber: 319,
             columnNumber: 11
         }, this);
         $[37] = t23;
@@ -1704,12 +1703,12 @@ function PersonalityPage() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/create/personality/page.tsx",
-                lineNumber: 328,
+                lineNumber: 327,
                 columnNumber: 55
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 328,
+            lineNumber: 327,
             columnNumber: 11
         }, this);
         $[39] = t17;
@@ -1754,12 +1753,12 @@ function PersonalityPage() {
                 onSelect: handleSelect
             }, void 0, false, {
                 fileName: "[project]/src/app/create/personality/page.tsx",
-                lineNumber: 361,
+                lineNumber: 360,
                 columnNumber: 130
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 361,
+            lineNumber: 360,
             columnNumber: 11
         }, this);
         $[45] = selectedPersonality;
@@ -1832,7 +1831,7 @@ function PersonalityPage() {
                                         children: "Selected Essence"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 408,
+                                        lineNumber: 407,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1844,7 +1843,7 @@ function PersonalityPage() {
                                         children: selectedPersonality.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 408,
+                                        lineNumber: 407,
                                         columnNumber: 115
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1852,13 +1851,13 @@ function PersonalityPage() {
                                         children: selectedPersonality.description
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 411,
+                                        lineNumber: 410,
                                         columnNumber: 49
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/create/personality/page.tsx",
-                                lineNumber: 405,
+                                lineNumber: 404,
                                 columnNumber: 59
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -1893,7 +1892,7 @@ function PersonalityPage() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 420,
+                                        lineNumber: 419,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1910,7 +1909,7 @@ function PersonalityPage() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create/personality/page.tsx",
-                                            lineNumber: 426,
+                                            lineNumber: 425,
                                             columnNumber: 107
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                             children: [
@@ -1933,25 +1932,25 @@ function PersonalityPage() {
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                                        lineNumber: 438,
+                                                        lineNumber: 437,
                                                         columnNumber: 46
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/create/personality/page.tsx",
-                                                    lineNumber: 432,
+                                                    lineNumber: 431,
                                                     columnNumber: 35
                                                 }, this)
                                             ]
                                         }, void 0, true)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/create/personality/page.tsx",
-                                        lineNumber: 426,
+                                        lineNumber: 425,
                                         columnNumber: 20
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/create/personality/page.tsx",
-                                lineNumber: 411,
+                                lineNumber: 410,
                                 columnNumber: 154
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1966,13 +1965,13 @@ function PersonalityPage() {
                                 children: "Reset Selection"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/create/personality/page.tsx",
-                                lineNumber: 438,
+                                lineNumber: 437,
                                 columnNumber: 110
                             }, this)
                         ]
                     }, "selected", true, {
                         fileName: "[project]/src/app/create/personality/page.tsx",
-                        lineNumber: 393,
+                        lineNumber: 392,
                         columnNumber: 184
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
@@ -2005,27 +2004,27 @@ function PersonalityPage() {
                             children: "Select a hexagon to reveal your essence"
                         }, void 0, false, {
                             fileName: "[project]/src/app/create/personality/page.tsx",
-                            lineNumber: 452,
+                            lineNumber: 451,
                             columnNumber: 38
                         }, this)
                     }, "instruction", false, {
                         fileName: "[project]/src/app/create/personality/page.tsx",
-                        lineNumber: 443,
+                        lineNumber: 442,
                         columnNumber: 226
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/create/personality/page.tsx",
-                    lineNumber: 393,
+                    lineNumber: 392,
                     columnNumber: 132
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/create/personality/page.tsx",
-                lineNumber: 393,
+                lineNumber: 392,
                 columnNumber: 46
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 393,
+            lineNumber: 392,
             columnNumber: 11
         }, this);
         $[50] = handleContinue;
@@ -2046,7 +2045,7 @@ function PersonalityPage() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 468,
+            lineNumber: 467,
             columnNumber: 11
         }, this);
         $[54] = t26;
@@ -2068,7 +2067,7 @@ function PersonalityPage() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/create/personality/page.tsx",
-            lineNumber: 478,
+            lineNumber: 477,
             columnNumber: 11
         }, this);
         $[58] = t35;

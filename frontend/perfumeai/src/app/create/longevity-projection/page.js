@@ -28,8 +28,10 @@ export default function LongevityProjectionPage() {
       projection_score: parseFloat(projectionScore.toFixed(2)),
       longevity_score: parseFloat(longevityScore.toFixed(2)),
       raw_slider_value: sliderValue,
-      timestamp: new Date().toISOString()
     };
+    
+    // Store to localStorage
+    localStorage.setItem('perfume_longevity_data', JSON.stringify(payload));
     
     // Log to console (mock backend call)
     console.log('=== Sillage Selector Output ===');

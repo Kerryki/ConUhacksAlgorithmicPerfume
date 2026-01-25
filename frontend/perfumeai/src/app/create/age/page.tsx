@@ -34,7 +34,6 @@ export default function AgePage() {
           intensity: selectedAge.intensity,
           intensityLevel: selectedAge.intensityLevel,
         },
-        timestamp: new Date().toISOString()
       }
       console.log("Age selection payload:", JSON.stringify(payload, null, 2))
       

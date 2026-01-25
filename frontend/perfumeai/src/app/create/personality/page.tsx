@@ -70,7 +70,6 @@ export default function PersonalityPage() {
         name: selectedPersonality.name,
         title: selectedPersonality.title,
       },
-      timestamp: new Date().toISOString(),
     }
 
     console.log("Personality payload:", JSON.stringify(payload, null, 2))

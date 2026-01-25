@@ -133,7 +133,6 @@ export default function GenderExpressionPage() {
         y: Math.round(moleculePosition.y)
       },
       category: category,
-      timestamp: new Date().toISOString()
     };
 
     // Store to localStorage

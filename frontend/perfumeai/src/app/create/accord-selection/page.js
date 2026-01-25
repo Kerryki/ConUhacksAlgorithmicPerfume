@@ -312,21 +312,20 @@ export default function AccordSelectionPage() {
   }, [normalizedValues]);
 
   const handleContinue = () => {
-    const accordData = [
-      { floral: parseFloat(normalizedValues.floral.toFixed(2)) },
-      { oriental: parseFloat(normalizedValues.oriental.toFixed(2)) },
-      { woody: parseFloat(normalizedValues.woody.toFixed(2)) },
-      { fresh: parseFloat(normalizedValues.fresh.toFixed(2)) }
-    ];
+    // Convert normalized values (0-1) to percentages (0-100) and round to integers
+    const scentIdentity = {
+      fresh: Math.round(normalizedValues.fresh * 100),
+      floral: Math.round(normalizedValues.floral * 100),
+      woody: Math.round(normalizedValues.woody * 100),
+      oriental: Math.round(normalizedValues.oriental * 100),
+    };
 
     localStorage.setItem('perfume_accord_data', JSON.stringify({
-      normalized_accords: accordData,
-      raw_values: { woody: woodyValue, floral: floralValue, fresh: freshValue, oriental: orientalValue },
-      timestamp: new Date().toISOString()
+      scent_identity: scentIdentity,
     }));
 
     console.log('=== Accord Selection Output ===');
-    console.log('Normalized Accords:', accordData);
+    console.log('Scent Identity:', scentIdentity);
     console.log('================================');
 
     // Navigate to weather page (before personal name)

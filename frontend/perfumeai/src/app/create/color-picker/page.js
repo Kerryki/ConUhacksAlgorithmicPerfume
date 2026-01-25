@@ -53,7 +53,6 @@ export default function ColorPickerPage() {
       hue: Math.round(hue),
       saturation: Math.round(saturation),
       brightness: Math.round(brightness),
-      timestamp: new Date().toISOString()
     };
     
     // Store to localStorage

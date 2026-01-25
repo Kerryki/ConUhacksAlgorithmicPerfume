@@ -344,7 +344,6 @@ export default function TimeMoodPage() {
       time_value: sliderValue,
       time_period: currentPeriod.id,
       period_label: currentPeriod.label,
-      timestamp: new Date().toISOString()
     };
 
     localStorage.setItem('perfume_time_data', JSON.stringify(timeData));

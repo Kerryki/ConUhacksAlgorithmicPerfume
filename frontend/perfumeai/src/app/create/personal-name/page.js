@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, Sparkles, User } from 'lucide-react';
 import Link from 'next/link';
 import { HexagonBackground } from './components/HexagonBackground';
+import { collectAllPerfumeData, submitPerfumeData } from '../utils/collectPerfumeData';
 
 // Floating particles component
 function FloatingParticles({ color, count = 25 }) {
@@ -82,6 +83,7 @@ export default function PersonalNamePage() {
   const [isFocused, setIsFocused] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const accentColor = '#fbbf24'; // Golden amber - matching theme
   const secondaryColor = '#f59e0b';
@@ -102,26 +104,50 @@ export default function PersonalNamePage() {
 
     setIsSubmitting(true);
     setShowCelebration(true);
+    setSubmitError(null);
 
-    const nameData = {
-      personal_name: name.trim(),
-      timestamp: new Date().toISOString()
-    };
+    try {
+      // Store personal name to localStorage first
+      const nameData = {
+        personal_name: name.trim(),
+      };
+      localStorage.setItem('perfume_personal_name', JSON.stringify(nameData));
 
-    // Store to localStorage
-    localStorage.setItem('perfume_personal_name', JSON.stringify(nameData));
+      // Collect all perfume data from localStorage
+      const allPerfumeData = collectAllPerfumeData();
 
-    // Log for debugging
-    console.log('=== Personal Name Output ===');
-    console.log(nameData);
-    console.log('============================');
+      // Log collected data for debugging
+      console.log('=== Complete Perfume Data Collection ===');
+      console.log(JSON.stringify(allPerfumeData, null, 2));
+      console.log('========================================');
 
-    // Short delay for celebration animation, then navigate
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    // Navigate to results/summary page (or wherever the flow ends)
-    // For now, we'll just log completion - adjust the route as needed
-    router.push('/create/results');
+      // Submit to backend
+      console.log('Submitting to backend...');
+      const response = await submitPerfumeData(allPerfumeData);
+      
+      console.log('=== Backend Response ===');
+      console.log(response);
+      console.log('========================');
+
+      // Short delay for celebration animation
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      
+      // Navigate to results page with the response data
+      // You can pass the response via query params or state if needed
+      router.push('/create/results');
+      
+    } catch (error) {
+      console.error('Error submitting perfume data:', error);
+      setSubmitError(error.message || 'Failed to submit data. Please try again.');
+      setIsSubmitting(false);
+      setShowCelebration(false);
+      
+      // Still allow navigation after error (for development)
+      // In production, you might want to show an error message instead
+      setTimeout(() => {
+        router.push('/create/results');
+      }, 2000);
+    }
   };
 
   const handleKeyDown = (e) => {
@@ -399,6 +425,29 @@ export default function PersonalNamePage() {
                     >
                       "{name.trim()}'s Signature Scent"
                     </motion.p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Error message */}
+              <AnimatePresence>
+                {submitError && (
+                  <motion.div
+                    className="mt-4 p-4 rounded-lg backdrop-blur-sm"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                    }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                  >
+                    <p className="text-sm text-red-400 text-center font-light">
+                      {submitError}
+                    </p>
+                    <p className="text-xs text-white/40 text-center mt-1">
+                      Continuing to results page...
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>
