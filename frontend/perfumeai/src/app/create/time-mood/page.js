@@ -78,9 +78,8 @@ export default function TimeMoodPage() {
     console.log('Full Payload:', timeData);
     console.log('==========================');
 
-    // Navigate to next page (placeholder - update when next page is ready)
-    // router.push('/create/next-page');
-    console.log('Ready to navigate to next page');
+    // Navigate to accord selection page
+    router.push('/create/accord-selection');
   };
 
   return (
