@@ -1,3 +1,9 @@
+
+
+
+
+
+
 for every column, the votes sum to anumber, we need them all to sum to 100$ f
 
 
