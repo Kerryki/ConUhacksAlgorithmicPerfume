@@ -11,4 +11,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Railway sets PORT at runtime
 EXPOSE 5000
 
-CMD ["sh", "-c", "gunicorn app:app --bind 0.0.0.0:${PORT:-5000}"]
+# Use shell form for environment variable expansion
+CMD gunicorn app:app --bind 0.0.0.0:$PORT
