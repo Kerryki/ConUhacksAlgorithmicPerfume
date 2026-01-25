@@ -170,7 +170,7 @@ export default function AgePage() {
               className="text-sm font-light"
               style={{ color: selectedAge ? selectedAge.color : "#fbbf24" }}
             >
-              4 / 7
+              4 / 8
             </span>
           </motion.div>
         </motion.header>

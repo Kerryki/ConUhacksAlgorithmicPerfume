@@ -168,7 +168,7 @@ export default function PersonalityPage() {
                 className="text-xs font-light tracking-widest uppercase"
                 style={{ color: selectedPersonality?.accentColor || '#fbbf24' }}
               >
-                Step 1 of 7
+                Step 1 of 8
               </span>
             </motion.div>
 

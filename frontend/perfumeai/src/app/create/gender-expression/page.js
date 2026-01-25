@@ -274,7 +274,7 @@ export default function GenderExpressionPage() {
               className="text-sm font-light"
               style={{ color: hasDragged ? currentCategory.color : "#fbbf24" }}
             >
-              5 / 7
+              5 / 8
             </span>
           </motion.div>
         </motion.header>

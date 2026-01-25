@@ -407,7 +407,7 @@ export default function TimeMoodPage() {
               Step
             </span>
             <span className="text-sm font-light" style={{ color: currentColor }}>
-              6 / 7
+              6 / 8
             </span>
           </motion.div>
         </motion.header>

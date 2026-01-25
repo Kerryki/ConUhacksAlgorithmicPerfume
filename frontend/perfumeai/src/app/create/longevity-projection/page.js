@@ -60,7 +60,7 @@ export default function LongevityProjectionPage() {
         {/* Step indicator */}
         <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 backdrop-blur-sm bg-amber-500/10 border border-amber-500/30">
           <span className="text-xs font-light tracking-widest uppercase text-amber-400">
-            Step 3 of 7
+            Step 3 of 8
           </span>
         </div>
         <h1 className="text-4xl md:text-5xl font-light text-white">
