@@ -52,7 +52,7 @@ export function collectAllPerfumeData() {
  */
 export async function submitPerfumeData(data) {
   try {
-    const response = await fetch('http://localhost:5000/api/perfumes/recommend', {
+    const response = await fetch('http://localhost:5000/create-scent', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json' 
