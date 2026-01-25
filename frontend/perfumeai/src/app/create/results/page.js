@@ -151,6 +151,9 @@ function PerfumeDroplet({ color }) {
             top: '50%',
             marginLeft: '-6px',
             marginTop: '-6px',
+            transformOrigin: '6px 6px',
+            x: Math.cos((angle * Math.PI) / 180) * 50,
+            y: Math.sin((angle * Math.PI) / 180) * 50,
           }}
           animate={{
             rotate: [angle, angle + 360],
@@ -159,11 +162,6 @@ function PerfumeDroplet({ color }) {
             duration: 8,
             repeat: Infinity,
             ease: "linear",
-          }}
-          style={{
-            transformOrigin: '6px 6px',
-            x: Math.cos((angle * Math.PI) / 180) * 50,
-            y: Math.sin((angle * Math.PI) / 180) * 50,
           }}
         />
       ))}
