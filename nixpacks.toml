@@ -1,0 +1,13 @@
+# Nixpacks configuration for Frontend service
+# This file tells Nixpacks to use Node.js provider even though package.json is in a subdirectory
+
+providers = ["node"]
+
+[phases.setup]
+nixPkgs = ["nodejs_20", "npm"]
+
+[phases.build]
+cmds = ["cd frontend/perfumeai && npm install && npm run build"]
+
+[start]
+cmd = "cd frontend/perfumeai && npm start"
