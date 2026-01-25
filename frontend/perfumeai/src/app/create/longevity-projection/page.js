@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import LongevityClock from './components/LongevityClock';
 import ProjectionAura from './components/ProjectionAura';
 
 export default function LongevityProjectionPage() {
+  const router = useRouter();
   const [sliderValue, setSliderValue] = useState(50);
 
   const handleSliderChange = (e) => {
@@ -33,6 +35,9 @@ export default function LongevityProjectionPage() {
     console.log('Normalized Longevity Score:', payload.longevity_score);
     console.log('Full Payload:', payload);
     console.log('================================');
+    
+    // Navigate to gender expression page
+    router.push('/create/gender-expression');
     
     // TODO: Send to actual backend
     // try {
