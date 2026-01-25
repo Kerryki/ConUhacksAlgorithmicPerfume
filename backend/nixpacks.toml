@@ -1,0 +1,13 @@
+# Nixpacks configuration for Backend service
+# This file tells Nixpacks to use Python provider for the Flask backend
+
+providers = ["python"]
+
+[phases.setup]
+nixPkgs = ["python311"]
+
+[phases.build]
+cmds = ["cd backend && pip install -r requirements.txt"]
+
+[start]
+cmd = "cd backend && gunicorn app:app --bind 0.0.0.0:$PORT"
