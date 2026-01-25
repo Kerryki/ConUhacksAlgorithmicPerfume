@@ -7,8 +7,8 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the longevity-projection page
-    router.push('/create/longevity-projection');
+    // Redirect to the personality page (first step)
+    router.push('/create/personality');
   }, [router]);
 
   return (
